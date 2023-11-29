@@ -22,7 +22,12 @@ export default async function handler(
       const form = new IncomingForm();
       const [_, files] = await form.parse(req);
       const userId = req.headers["x-user-id"] as string;
-      const pdfLoader = new PDFLoader(files.pdfData[0].filepath);
+      const pdfData = files?.pdfData?.[0] || null;
+      if (!pdfData) {
+        res.status(400).json({ error: "No PDF file found" });
+        return;
+      }
+      const pdfLoader = new PDFLoader(pdfData.filepath);
       const pdfDocument = (await pdfLoader.load()).map((page) => {
         page.metadata["userId"] = userId;
         return page;

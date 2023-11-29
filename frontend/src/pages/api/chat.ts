@@ -32,43 +32,6 @@ export default async function handler(req: Request, res: any) {
           status: 400,
         });
       }
-
-      try {
-        const chatHistory = await prisma.chatHistory.findUnique({
-          where: {
-            userId: userId,
-          },
-        });
-
-        const newStep = { type: "question", text: question };
-
-        if (chatHistory) {
-          // If chat history exists, update it with the new conversation step
-          await prisma.chatHistory.update({
-            where: {
-              userId: userId,
-            },
-            data: {
-              conversation: chatHistory.conversation
-                ? {
-                    push: { type: "question", text: question },
-                  }
-                : { set: [{ type: "question", text: question }] },
-            },
-          });
-        } else {
-          // If chat history doesn't exist, create a new record
-          await prisma.chatHistory.create({
-            data: {
-              userId: userId,
-              conversation: [newStep],
-            },
-          });
-        }
-      } catch (error) {
-        console.log(error);
-      }
-
       const pinecone = await initPinecone();
       const index = pinecone.Index(PINECONE_INDEX_NAME);
       const vectorStore = await PineconeStore.fromExistingIndex(
