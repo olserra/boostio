@@ -1,12 +1,16 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 // Create the context with default value as empty state
-const Context = createContext<
+const UserContext = createContext<
   [IState, React.Dispatch<React.SetStateAction<IState>>]
 >([{} as IState, () => {}]);
 
+export const useUser = () => useContext(UserContext);
+
 // Context provider component
-const ContextProvider: React.FC<{ children: React.ReactNode }> = (props) => {
+const UserContextProvider: React.FC<{ children: React.ReactNode }> = (
+  props
+) => {
   // Initialize state with default values
   const [state, setState] = useState<IState>({
     user: {
@@ -18,10 +22,10 @@ const ContextProvider: React.FC<{ children: React.ReactNode }> = (props) => {
 
   // Return the context provider with state and setState
   return (
-    <Context.Provider value={[state, setState]}>
+    <UserContext.Provider value={[state, setState]}>
       {props.children}
-    </Context.Provider>
+    </UserContext.Provider>
   );
 };
 
-export { Context, ContextProvider };
+export { UserContext, UserContextProvider };

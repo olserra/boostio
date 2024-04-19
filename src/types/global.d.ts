@@ -8,3 +8,8 @@ declare interface IUser {
 declare interface IState {
   user: IUser;
 }
+
+declare interface LanguageContextType {
+  language: string;
+  setLanguage: (lang: string) => void;
+}
