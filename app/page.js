@@ -1,3 +1,4 @@
+import { Contact } from "@/components/Contact";
 import { Footer, Navbar } from "../components";
 import {
   About,
@@ -29,6 +30,9 @@ const Page = () => (
       <Insights />
       <div className="gradient-04 z-0" />
       <Feedback />
+    </div>
+    <div className="relative">
+      <Contact />
     </div>
     <Footer />
   </div>

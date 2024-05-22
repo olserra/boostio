@@ -1,16 +1,11 @@
-import React, { ChangeEvent, useState } from "react";
-import Button from "./Button";
+"use client"
+
+import React, { useState } from "react";
 import axios from "axios";
+import { TitleText } from "../components";
 
-type Lead = {
-  name: string; // New field
-  email: string;
-  company: string; // New field
-  employees: string; // New field
-};
-
-export const FormInput: React.FC = () => {
-  const [formData, setFormData] = useState<Lead>({
+export const Contact = () => {
+  const [formData, setFormData] = useState({
     name: "", // Initialize new fields
     email: "",
     company: "",
@@ -19,7 +14,7 @@ export const FormInput: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isEmailValid, setIsEmailValid] = useState(true); // State to track email validation
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!formData.name) {
@@ -51,7 +46,7 @@ export const FormInput: React.FC = () => {
   };
 
   const handleChange = (
-    event: ChangeEvent<HTMLSelectElement | HTMLInputElement>
+    event
   ) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({
@@ -67,9 +62,14 @@ export const FormInput: React.FC = () => {
         <p className="pb-2 lg:pb-4 lg:py-0 text-sm md:text-lg text-gray-500">
           CONTACT US{" "}
         </p>
-        <p className="pb-12 text-base lg:text-4xl font-bold lg:pb-14 text-gray-800">
-          Drop a message
-        </p>
+        <TitleText
+          title={
+            <>
+              Drop a message
+            </>
+          }
+          textStyles="text-center"
+        />
       </div>
       <form
         className="flex flex-row justify-center items-center md:pb-12"
@@ -106,8 +106,8 @@ export const FormInput: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       className={`w-full bg-gray-100 rounded border ${isEmailValid
-                          ? "border-gray-300 focus:border-indigo-500"
-                          : "border-red-500"
+                        ? "border-gray-300 focus:border-indigo-500"
+                        : "border-red-500"
                         } text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out`}
                     />
                     {!isEmailValid && (
@@ -157,9 +157,9 @@ export const FormInput: React.FC = () => {
           </div>
           <div className="pl-2 py-24 md:py-0 w-full text-white">
             {isSubmitted ? (
-              <p className="text-gray-800">✔ We will get in touch</p>
+              <p className="text-gray-300">✔ We will get in touch</p>
             ) : (
-              <Button type="submit">Send</Button>
+              <button className="text-gray-300 border rounded-xl px-2 py-1" type="submit">Send</button>
             )}
           </div>
         </section>

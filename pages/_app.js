@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import "../styles/globals.css";
+import { FocusProvider } from "@/context";
 
 const MyApp = ({ Component, pageProps }) => (
   <>
@@ -14,7 +15,9 @@ const MyApp = ({ Component, pageProps }) => (
         href="https://stijndv.com/fonts/Eudoxus-Sans.css"
       />
     </Head>
-    <Component {...pageProps} />
+    <FocusProvider>
+      <Component {...pageProps} />
+    </FocusProvider>
   </>
 );
 

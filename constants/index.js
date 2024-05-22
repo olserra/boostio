@@ -8,10 +8,8 @@ import Planet_7 from "../public/planet-07.png";
 import Planet_8 from "../public/planet-08.png";
 import vrpano from "../public/vrpano.svg";
 import headset from "../public/headset.svg";
-import twitter from "../public/twitter.svg";
 import linkedin from "../public/linkedin.svg";
 import instagram from "../public/instagram.svg";
-import facebook from "../public/facebook.svg";
 
 export const exploreWorlds = [
   {
@@ -85,19 +83,13 @@ export const insights = [
 
 export const socials = [
   {
-    name: "twitter",
-    url: twitter,
-  },
-  {
     name: "linkedin",
-    url: linkedin,
+    img: linkedin,
+    link: "https://www.linkedin.com/company/boostioai",
   },
   {
     name: "instagram",
-    url: instagram,
-  },
-  {
-    name: "facebook",
-    url: facebook,
+    img: instagram,
+    link: "https://www.instagram.com/boostio.ai/"
   },
 ];
