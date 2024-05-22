@@ -44,8 +44,8 @@ const Navbar = () => {
             <button className="text-gray-300">Careers</button>
           </a>
           {isClicked ?
-            <button onClick={handleGetContacted} className="text-gray-300 border rounded-xl px-2 py-1">↓ Scroll down</button>
-            : <button onClick={handleGetContacted} className="text-gray-300 border rounded-xl px-2 py-1">Contact Us</button>
+            <button onClick={handleGetContacted} className="text-gray-300 border rounded-xl px-2 py-1 text-sm">Scroll ↓ </button>
+            : <button onClick={handleGetContacted} className="text-gray-300 border rounded-xl px-2 py-1 text-sm">Contact Us</button>
           }
         </div>
       </motion.div>
