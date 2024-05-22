@@ -12,6 +12,10 @@ const Navbar = () => {
 
   const handleGetContacted = () => {
     setIsClicked(true);
+    setTimeout(() => {
+      setIsClicked(false);
+    }
+      , 2000);
   }
 
   return (
