@@ -63,23 +63,24 @@ export const newFeatures = [
 export const insights = [
   {
     imgUrl: Planet_6,
-    title: "The launch of the Metaverse makes Elon musk ketar-ketir",
+    title: "The rapid rise of AI prompts Sam Altman to call for regulation",
     subtitle:
-      "Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Diam maecenas sed enim ut sem viverra alique.",
+      "Sam Altman stated, 'AI will be the most transformative technology of our lifetimes, and we need to manage its impact responsibly.'",
   },
   {
     imgUrl: Planet_7,
-    title: "7 tips to easily master the madness of the Metaverse",
+    title: "7 tips to easily navigate the complexities of AI ethics",
     subtitle:
-      "Vitae congue eu consequat ac felis donec. Et magnis dis parturient montes nascetur ridiculus mus. Convallis tellus id interdum",
+      "Sundar Pichai remarked, 'AI is one of the most important things humanity is working on. It is more profound than, I dunno, electricity or fire.' Understanding ethical use is critical.",
   },
   {
     imgUrl: Planet_8,
-    title: "With one platform you can explore the whole world virtually",
+    title: "Explore the vast possibilities of AI with a single platform",
     subtitle:
-      "Quam quisque id diam vel quam elementum. Viverra nam libero justo laoreet sit amet cursus sit. Mauris in aliquam sem",
+      "Elon Musk warned, 'With artificial intelligence, we are summoning the demon.' Despite the risks, platforms like OpenAI offer groundbreaking capabilities.",
   },
 ];
+
 
 export const socials = [
   {

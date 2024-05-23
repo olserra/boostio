@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "../styles";
 import { fadeIn } from "../utils/motion";
-import headset from "../public/headset.svg";
+import Logo from "../public/logo.png";
 
 // We are getting this "id, imgUrl, title" props from "{...world} spread".
 const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
@@ -30,8 +30,8 @@ const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
           className={`${styles.flexCenter} w-[60px] h-[60px] rounded-[24px] glassmorphism mb-[16px]`}
         >
           <Image
-            src={headset}
-            alt="headset"
+            src={Logo}
+            alt="Logo"
             className="w-1/2 h-1/2 object-contain"
           />
         </div>
