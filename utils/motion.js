@@ -6,6 +6,7 @@ export const navVariants = {
       type: 'spring',
       stiffness: 300,
       damping: 140,
+      ease: "linear"
     },
   },
   show: {
@@ -15,6 +16,7 @@ export const navVariants = {
       type: 'spring',
       stiffness: 80,
       delay: 1,
+      ease: "linear"
     },
   },
 };
@@ -42,6 +44,7 @@ export const staggerContainer = (staggerChildren, delayChildren) => ({
     transition: {
       staggerChildren,
       delayChildren,
+      ease: "linear"
     },
   },
 });
@@ -68,7 +71,7 @@ export const textContainer = {
   },
   show: (i = 1) => ({
     opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: i * 0.1 },
+    transition: { staggerChildren: 0.1, delayChildren: i * 0.1, ease: "linear" },
   }),
 };
 
@@ -118,6 +121,7 @@ export const planetVariants = (direction) => ({
       type: 'spring',
       duration: 1.8,
       delay: 0.5,
+      ease: "linear"
     },
   },
 });
@@ -147,6 +151,7 @@ export const footerVariants = {
       type: 'spring',
       stiffness: 300,
       damping: 140,
+      ease: "linear"
     },
   },
   show: {
@@ -156,6 +161,7 @@ export const footerVariants = {
       type: 'spring',
       stiffness: 80,
       delay: 0.5,
+      ease: "linear"
     },
   },
 };

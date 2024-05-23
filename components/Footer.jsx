@@ -15,7 +15,7 @@ const Footer = () => (
     className={`${styles.xPaddings} py-8 relative`}
   >
     <div className="footer-gradient" />
-    <div className="flex items-center flex-wrap gap-4">
+    <div className="flex justify-between items-center flex-wrap gap-4">
       <h4 className="font-extrabold text-[24px] text-white">boostio</h4>
       <p className="font-normal text-[14px] text-white opacity-50">
         Copyright © 2024 boostio. All rights reserved.

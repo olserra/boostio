@@ -6,9 +6,15 @@ import styles from "../styles";
 import { navVariants } from "../utils/motion";
 import Logo from "../public/logo.png";
 import { useState } from "react";
+import { useRouter } from 'next/navigation'
 
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const router = useRouter();
+
+  const handleLogoClick = () => {
+    router.push("/");
+  }
 
   const handleGetContacted = () => {
     setIsClicked(true);
@@ -35,7 +41,7 @@ const Navbar = () => {
         whileInView="show"
         className={`${styles.innerWidth} mx-auto flex justify-between gap-8`}
       >
-        <div className="flex flex-row items-center cursor-pointer gap-2">
+        <div onClick={handleLogoClick} className="flex flex-row items-center cursor-pointer gap-2">
           <Image src={Logo} alt="Boostio logo" width={23} />
           <h4 className="font-extrabold text-[24px] text-white">boostio</h4>
         </div>
