@@ -15,7 +15,7 @@ export const exploreWorlds = [
   {
     id: "world-1",
     imgUrl: Planet_1,
-    title: "AI Agents",
+    title: "Multi-Agents",
   },
   {
     id: "world-2",
