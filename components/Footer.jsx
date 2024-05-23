@@ -5,7 +5,7 @@ import { socials } from "../constants";
 import styles from "../styles";
 import { footerVariants } from "../utils/motion";
 import Image from "next/image";
-import headset from "../public/headset.svg";
+import React from 'react';
 
 const Footer = () => (
   <motion.footer

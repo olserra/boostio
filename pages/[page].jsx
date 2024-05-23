@@ -2,7 +2,8 @@ import React from "react";
 import { useRouter } from "next/router";
 import { PrivacyPolicy } from "@/components/PrivacyPolicy";
 import { TermsOfService } from "@/components/TermsOfService";
-import { Footer, Navbar } from "../components";
+import { Footer } from "@/components";
+import { Navbar } from "@/components";
 
 const PageContent = {
   "privacy-policy": <PrivacyPolicy />,

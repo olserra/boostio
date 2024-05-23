@@ -7,6 +7,7 @@ import { navVariants } from "../utils/motion";
 import Logo from "../public/logo.png";
 import { useState } from "react";
 import { useRouter } from 'next/navigation'
+import React from 'react';
 
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
