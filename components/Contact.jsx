@@ -59,7 +59,7 @@ export const Contact = () => {
   return (
     <div className="lg:py-8 px-4 md:px-12 mx-auto max-w-screen-2xl text-center lg:px-6">
       <div className="mx-auto max-w-screen-sm mt-12">
-        <p className="pb-2 lg:pb-4 lg:py-0 text-sm md:text-lg text-gray-500">
+        <p className="pb-2 lg:pb-4 lg:py-0 text-sm md:text-lg text-gray-800">
           CONTACT US{" "}
         </p>
         <TitleText
@@ -159,7 +159,7 @@ export const Contact = () => {
             {isSubmitted ? (
               <p className="text-gray-800">We will get in touch</p>
             ) : (
-              <button className="text-gray-800 underline" type="submit">SEND</button>
+              <button className="text-gray-800 border border-black py-2 px-3" type="submit">SEND</button>
             )}
           </div>
         </section>
