@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import styles from "../styles";
 import { fadeIn, staggerContainer } from "../utils/motion";
 import { TypingText, TitleText } from "../components";
-import fullmap from "../public/fullmap.svg";
+import fullmap from "../public/fullmap.jpeg";
 
 const World = () => (
   <section className={`${styles.paddings} relative z-10`}>

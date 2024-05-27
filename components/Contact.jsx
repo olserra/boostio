@@ -155,11 +155,11 @@ export const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="pl-2 py-24 md:py-0 w-full text-white">
+          <div className="pl-2 py-24 md:py-0 w-full text-gray-900">
             {isSubmitted ? (
-              <p className="text-gray-300">✔ We will get in touch</p>
+              <p className="text-gray-800">We will get in touch</p>
             ) : (
-              <button className="text-gray-300 border rounded-xl px-2 py-1" type="submit">Send</button>
+              <button className="text-gray-800 underline" type="submit">SEND</button>
             )}
           </div>
         </section>

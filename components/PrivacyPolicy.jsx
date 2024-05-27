@@ -3,10 +3,10 @@ import React from "react";
 export const PrivacyPolicy = () => (
   <div className="px-4 md:px-12 md:pb-24 mx-auto max-w-screen-xl text-center lg:px-6">
     <div className="mx-auto mt-12">
-      <p className="mb-8 text-gray-300 lg:mb-16 text-2xl md:text-4xl font-bold dark:text-gray-300">
+      <p className="mb-8 text-gray-800 lg:mb-16 text-2xl md:text-4xl font-bold dark:text-gray-800">
         Privacy Policy{" "}
       </p>
-      <div className="text-left text-sm text-gray-300">
+      <div className="text-left text-sm text-gray-800">
         <p>
           <span className="font-bold">1. Your Privacy Matters to Us</span>
           <br />

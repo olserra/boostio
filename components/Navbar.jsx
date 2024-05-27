@@ -1,13 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "../styles";
 import { navVariants } from "../utils/motion";
-import Logo from "../public/logo.png";
 import { useState } from "react";
 import { useRouter } from 'next/navigation'
 import React from 'react';
+import { Logo } from "./Logo";
 
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -33,7 +32,7 @@ const Navbar = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className="absolute w-[50%] inset-0 gradient-01"
+        className="absolute w-[50%]"
       />
 
       <motion.div
@@ -42,17 +41,16 @@ const Navbar = () => {
         whileInView="show"
         className={`${styles.innerWidth} mx-auto flex justify-between gap-8`}
       >
-        <div onClick={handleLogoClick} className="flex flex-row items-center cursor-pointer gap-2">
-          <Image src={Logo} alt="Boostio logo" width={23} />
-          <h4 className="font-extrabold text-[24px] text-white">boostio</h4>
+        <div onClick={handleLogoClick}>
+          <Logo />
         </div>
         <div className="flex gap-3 items-center">
           <a href="https://olserra.notion.site/Careers-4ac062b2b8d34b9fb1c4a3e16ecd3be4?pvs=4" target="_blank" rel="noopener noreferrer">
-            <button className="text-gray-300">Careers</button>
+            <button className="text-gray-800 text-sm ">CAREERS</button>
           </a>
           {isClicked ?
-            <button onClick={handleGetContacted} className="text-gray-300 border rounded-xl px-2 py-1 text-sm">Scroll ↓ </button>
-            : <button onClick={handleGetContacted} className="text-gray-300 border rounded-xl px-2 py-1 text-sm">Contact Us</button>
+            <h1 onClick={handleGetContacted} className="text-gray-800 text-sm">SCROLL ↓ </h1>
+            : <h1 onClick={handleGetContacted} className="text-gray-800 cursor-pointer text-sm border border-black py-2 px-3">CONTACT</h1>
           }
         </div>
       </motion.div>

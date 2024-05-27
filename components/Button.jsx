@@ -9,7 +9,7 @@ const Button = ({
     ...props
 }) => {
     const baseStyle =
-        "font-sans rounded font-medium py-2 px-4 min-w-[70px] min-h-[40px] text-white bg-gray-400";
+        "font-sans rounded font-medium py-2 px-4 min-w-[70px] min-h-[40px] text-gray-900 bg-gray-400";
     const disabledStyle = "bg-gray-500 cursor-not-allowed !text-gray-3800";
 
     useEffect(() => {

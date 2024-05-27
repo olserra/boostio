@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "../styles";
 import { slideIn, staggerContainer, textVariant } from "../utils/motion";
-import stamp from "../public/logo.png";
+import { FiArrowDownRight } from "react-icons/fi";
 import cover from "../public/cover.png";
 
 const Hero = () => (
@@ -18,8 +18,12 @@ const Hero = () => (
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
       <div className="flex justify-center items-center flex-col relative z-10 gap-3 mb-24">
-        <motion.h1 variants={textVariant(1.1)} className="font-bold text-gray-300 text-4xl">
-          AI / Automation / Innovation
+        <motion.h1
+          variants={textVariant(1.1)}
+          className="flex flex-row items-center font-bold font-sans text-gray-800 text-[70px] leading-extra-tight sm:pl-0 pl-4 gap-3"
+        >
+          Cutting-Edge Software & AI
+          <FiArrowDownRight className="hidden sm:block" size={80} />
         </motion.h1>
       </div>
 
@@ -36,18 +40,6 @@ const Hero = () => (
           priority
           className="w-full sm:h-[500px] h-[350px] object-cover rounded-tl-[140px] z-10 relative"
         />
-
-        <a href="#explore">
-          <div className="w-full flex justify-end sm:-mt-[70px] -mt-[50px] pr-[40px] relative z-10">
-            <Image
-              src={stamp}
-              alt="stamp"
-              placeholder="blur"
-              priority
-              className="sm:w-[155px] w-[100px] sm:h-[155px] h-[100px] object-contain "
-            />
-          </div>
-        </a>
       </motion.div>
     </motion.div>
   </section>

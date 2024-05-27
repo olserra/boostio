@@ -16,6 +16,12 @@ module.exports = {
       transitionTimingFunction: {
         'out-flex': 'cubic-bezier(0.05, 0.6, 0.4, 0.9)',
       },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
+      lineHeight: {
+        'extra-tight': '1.0', // Adjust this value as needed
+      },
     },
   },
   plugins: [],

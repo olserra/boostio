@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "../styles";
-import planet9 from "../public/planet-09.png";
+import planet9 from "../public/planet-09.jpeg";
 import stamp from "../public/logo.png";
 import { fadeIn, staggerContainer, zoomIn } from "../utils/motion";
 
@@ -23,14 +23,14 @@ const Feedback = () => (
         <div className="feedback-gradient" />
 
         <div>
-          <h4 className="font-bold sm:text-[32px] text-[26px] sm:leading-[40.32px] leading-[36.32px] text-white">
-            Samantha
+          <h4 className="font-bold sm:text-[32px] text-[26px] sm:leading-[40.32px] leading-[36.32px] text-gray-900">
+            Filomena
           </h4>
-          <p className="mt-[8px] font-normal sm:text-[18px] text-[12px] sm:leading-[22.68px] leading-[16.68px] text-white">
+          <p className="mt-[8px] font-normal sm:text-[18px] text-[12px] sm:leading-[22.68px] leading-[16.68px] text-gray-900">
             Founder DigitalCore
           </p>
         </div>
-        <p className="mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45.6px] leading-[39.6px] text-white">
+        <p className="mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45.6px] leading-[39.6px] text-gray-900">
           “With the development of AI, we faced a demand for innovation and stay ahead of the competition. Boostio helped us think out side of the box and implement a new framework for our innovation mindset”
         </p>
       </motion.div>
