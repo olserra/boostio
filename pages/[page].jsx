@@ -4,11 +4,11 @@ import { PrivacyPolicy } from "@/components/PrivacyPolicy";
 import { TermsOfService } from "@/components/TermsOfService";
 import { Footer } from "@/components";
 import { Navbar } from "@/components";
-import Reports from "@/components/Reports";
+import Resources from "@/components/Resources";
 const PageContent = {
   "privacy-policy": <PrivacyPolicy />,
   "terms-of-service": <TermsOfService />,
-  "reports": <Reports />,
+  "resources": <Resources />,
 };
 
 const DynamicPage = () => {

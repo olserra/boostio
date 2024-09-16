@@ -2,7 +2,7 @@
 
 import { FiArrowDownRight } from "react-icons/fi";
 
-const Reports = () => {
+const Resources = () => {
     return (
         <div className="max-w-7xl mx-auto p-8">
             <h1 className="text-5xl font-bold mb-8 text-center">The Future of Jobs & Skills in the Age of AI</h1>
@@ -36,4 +36,4 @@ const Reports = () => {
     );
 };
 
-export default Reports;
+export default Resources;
