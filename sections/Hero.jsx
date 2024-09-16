@@ -22,7 +22,7 @@ const Hero = () => (
           variants={textVariant(1.1)}
           className="flex flex-row items-center font-bold font-sans text-gray-800 text-[70px] leading-extra-tight sm:pl-0 pl-4 gap-3"
         >
-          AI-Driven Recommendations for Upskill and Reskill
+          Your AI Mentor and Coach for Upskilling and Reskilling
           <FiArrowDownRight className="hidden sm:block" size={80} />
         </motion.h1>
       </div>
