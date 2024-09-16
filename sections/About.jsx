@@ -15,15 +15,13 @@ const About = () => (
       className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
     >
       <TypingText title="| About Boostio" textStyles="text-center" />
-
       <motion.p
         variants={fadeIn("up", "tween", 0.2, 1)}
         className="mt-[10px] font-normal sm:text-[32px] text-[20px] text-center text-gray-600"
       >
-        <span className="font-extrabold text-gray-900">Boostio</span> is more than just your digital memory for the internet. It’s a powerful platform that learns and understands your personal or business profile, storing key information like preferences, skills, and interactions in a smart, dynamic system. Think of it as a personalized, ever-evolving database that allows our AI to provide insights and recommendations tailored specifically to you.{" "}
-        <span className="font-extrabold text-gray-900">Boostio AI</span> helps you make better decisions faster by seamlessly integrating across platforms, continuously updating your profile, and optimizing your growth and productivity like never before.
+        <span className="font-extrabold text-gray-900">Boostio</span> is more than just your digital memory for the internet. We leverage AI and GPT along with coaching and mentoring methodologies to empower people and teams. Boostio dynamically learns and understands your personal or business profile, providing tailored insights and recommendations.{" "}
+        <span className="font-extrabold text-gray-900">Boostio AI</span> helps you make smarter decisions faster by seamlessly integrating across platforms and optimizing growth and productivity like never before.
       </motion.p>
-
       <motion.img
         variants={fadeIn("up", "tween", 0.3, 1)}
         src="/arrow-down.svg"
