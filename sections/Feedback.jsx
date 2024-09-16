@@ -31,7 +31,7 @@ const Feedback = () => (
           </p>
         </div>
         <p className="mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45.6px] leading-[39.6px] text-gray-900">
-          “Boostio AI has transformed how we manage and utilize our digital data. With its centralized memory and personalized recommendations, we’ve significantly streamlined our decision-making process and increased productivity across all teams.”
+          “Thanks to Boostio AI, our team rapidly acquired new skills, which improved both our productivity and ability to stay competitive in a fast-changing market.”
         </p>
       </motion.div>
 
