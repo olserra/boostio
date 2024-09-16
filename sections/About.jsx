@@ -20,9 +20,10 @@ const About = () => (
         variants={fadeIn("up", "tween", 0.2, 1)}
         className="mt-[10px] font-normal sm:text-[32px] text-[20px] text-center text-gray-600"
       >
-        <span className="font-extrabold text-gray-900">Boostio</span> is your digital memory for the internet, offering smarter and more personalized recommendations. Our AI-driven platform centralizes your interactions and provides intelligent insights, helping businesses and individuals make better decisions faster.{" "}
-        <span className="font-extrabold text-gray-900">Boostio AI</span> empowers you with seamless integration across platforms and delivers recommendations tailored to your unique needs, optimizing productivity and growth.{" "}
+        <span className="font-extrabold text-gray-900">Boostio</span> is more than just your digital memory for the internet. It’s a powerful platform that learns and understands your personal or business profile, storing key information like preferences, skills, and interactions in a smart, dynamic system. Think of it as a personalized, ever-evolving database that allows our AI to provide insights and recommendations tailored specifically to you.{" "}
+        <span className="font-extrabold text-gray-900">Boostio AI</span> helps you make better decisions faster by seamlessly integrating across platforms, continuously updating your profile, and optimizing your growth and productivity like never before.
       </motion.p>
+
       <motion.img
         variants={fadeIn("up", "tween", 0.3, 1)}
         src="/arrow-down.svg"
