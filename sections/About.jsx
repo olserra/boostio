@@ -20,15 +20,9 @@ const About = () => (
         variants={fadeIn("up", "tween", 0.2, 1)}
         className="mt-[10px] font-normal sm:text-[32px] text-[20px] text-center text-gray-600"
       >
-        <span className="font-extrabold text-gray-900">Boostio</span> is an AI and Automation Agency
-        that helps businesses to grow and scale by leveraging the power of the latest technologies. We provide a wide range of services including
-        {" "}
-        <span className="font-extrabold text-gray-900"> LLMs, Agents, Sentiment Analysis, Automations, and Software Engineering (Web, App and AI development)</span>
-        {" "}
-        Our team of experts is dedicated to helping you achieve your business goals by
-        providing you with the best AI and Automation solutions.{" "}
+        <span className="font-extrabold text-gray-900">Boostio</span> is your digital memory for the internet, offering smarter and more personalized recommendations. Our AI-driven platform centralizes your interactions and provides intelligent insights, helping businesses and individuals make better decisions faster.{" "}
+        <span className="font-extrabold text-gray-900">Boostio AI</span> empowers you with seamless integration across platforms and delivers recommendations tailored to your unique needs, optimizing productivity and growth.{" "}
       </motion.p>
-
       <motion.img
         variants={fadeIn("up", "tween", 0.3, 1)}
         src="/arrow-down.svg"

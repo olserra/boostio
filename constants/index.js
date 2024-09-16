@@ -15,48 +15,48 @@ export const exploreWorlds = [
   {
     id: "world-1",
     imgUrl: Planet_1,
-    title: "Multi-Agents",
+    title: "Individual Training",
   },
   {
     id: "world-2",
     imgUrl: Planet_2,
-    title: "LLMs",
+    title: "Team Training",
   },
   {
     id: "world-3",
     imgUrl: Planet_3,
-    title: "Automations",
+    title: "Coaching",
   },
   {
     id: "world-4",
     imgUrl: Planet_4,
-    title: "Hackathons",
+    title: "Mentoring",
   },
   {
     id: "world-5",
     imgUrl: Planet_5,
-    title: "Software Engineering",
+    title: "Strategy Consulting",
   },
 ];
 
 export const startingFeatures = [
-  "Understand the client's needs",
-  "Design the architecture using the latest technology",
-  "Develop the product with the best quality",
+  "Centralize your digital interactions in one place for easy access and better organization.",
+  "Get personalized recommendations that evolve with your needs, improving decision-making over time.",
+  "Seamless integration across platforms to enhance productivity and simplify your workflows.",
 ];
 
 export const newFeatures = [
   {
     imgUrl: vrpano,
-    title: "Latest technologies",
+    title: "Smarter Recommendations",
     subtitle:
-      "We use the latest technology to create a world that is more real than reality itself",
+      "Our platform uses AI to provide tailored insights, based on your digital memory, that enhance your decision-making process.",
   },
   {
     imgUrl: headset,
-    title: "Innovation mindset",
+    title: "Centralized Digital Memory",
     subtitle:
-      "We will leverage data and creativity to deliver the best solutions for your business",
+      "Boostio AI brings together all your digital interactions, making it easy to access and use insights across any platform.",
   },
 ];
 
@@ -80,7 +80,6 @@ export const insights = [
       "Elon Musk warned, 'With artificial intelligence, we are summoning the demon.' Despite the risks, platforms like OpenAI offer groundbreaking capabilities.",
   },
 ];
-
 
 export const socials = [
   {
