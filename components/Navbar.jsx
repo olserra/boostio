@@ -34,15 +34,12 @@ const Navbar = () => {
       <a href="https://olserra.notion.site/Careers-4ac062b2b8d34b9fb1c4a3e16ecd3be4?pvs=4" target="_blank" rel="noopener noreferrer">
         <button className="text-gray-800 text-sm">CAREERS</button>
       </a>
-      <a href="/resources" target="" rel="">
-        <button className="text-gray-800 text-sm">RESOURCES</button>
-      </a>
       {isClicked ? (
-        <h1 onClick={handleGetContacted} className="text-gray-800 text-sm">SCROLL ↓</h1>
+        <button onClick={handleGetContacted} className="text-gray-800 text-sm">SCROLL ↓</button>
       ) : (
-        <h1 onClick={handleGetContacted} className="text-gray-800 cursor-pointer text-sm border border-black py-2 px-3">
+        <button onClick={handleGetContacted} className="text-gray-800 cursor-pointer text-sm border border-black py-2 px-3">
           CONTACT
-        </h1>
+        </button>
       )}
     </>
   ), [isClicked, handleGetContacted]);

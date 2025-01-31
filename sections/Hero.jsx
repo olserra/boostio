@@ -20,9 +20,9 @@ const Hero = () => (
       <div className="flex justify-center items-center flex-col relative z-10 gap-3 mb-24">
         <motion.h1
           variants={textVariant(1.1)}
-          className="flex flex-row items-center font-bold font-sans text-gray-800 text-4xl md:text-[70px] leading-extra-tight sm:pl-0 pl-4 gap-3"
+          className="flex flex-row items-center font-bold font-sans text-gray-800 text-[50px] md:text-[70px] leading-tight sm:pl-0 pl-4 gap-3 mx-2"
         >
-          Your AI Mentor and Coach for Upskilling and Reskilling
+          AI-First Strategy & Automation for Business Growth
           <FiArrowDownRight className="hidden sm:block" size={80} />
         </motion.h1>
       </div>
