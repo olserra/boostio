@@ -3,14 +3,12 @@
 import { motion } from "framer-motion";
 import styles from "../styles";
 import { navVariants } from "../utils/motion";
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, React } from "react";
 import { useRouter } from 'next/navigation';
-import React from 'react';
 import { Logo } from "./Logo";
 import { RiMenu4Fill, RiCloseFill } from "react-icons/ri";
 
 const Navbar = () => {
-  const [isClicked, setIsClicked] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
@@ -19,10 +17,10 @@ const Navbar = () => {
   }, [router]);
 
   const handleGetContacted = useCallback(() => {
-    setIsClicked(true);
-    setTimeout(() => {
-      setIsClicked(false);
-    }, 2000);
+    const formElement = document.getElementById("contact-form");
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: "smooth" });
+    }
   }, []);
 
   const toggleMenu = useCallback(() => {
@@ -34,15 +32,12 @@ const Navbar = () => {
       <a href="https://olserra.notion.site/Careers-4ac062b2b8d34b9fb1c4a3e16ecd3be4?pvs=4" target="_blank" rel="noopener noreferrer">
         <button className="text-gray-800 text-sm">CAREERS</button>
       </a>
-      {isClicked ? (
-        <button onClick={handleGetContacted} className="text-gray-800 text-sm">SCROLL ↓</button>
-      ) : (
-        <button onClick={handleGetContacted} className="text-gray-800 cursor-pointer text-sm border border-black py-2 px-3">
-          CONTACT
-        </button>
-      )}
+
+      <button onClick={handleGetContacted} className="text-gray-800 cursor-pointer text-sm border border-black py-2 px-3">
+        CONTACT
+      </button>
     </>
-  ), [isClicked, handleGetContacted]);
+  ), [handleGetContacted]);
 
   return (
     <nav className={`${styles.xPaddings} py-8 relative`}>
@@ -60,14 +55,14 @@ const Navbar = () => {
         whileInView="show"
         className={`${styles.innerWidth} mx-auto flex justify-between items-center gap-8`}
       >
-        <div onClick={handleLogoClick}>
+        <button onClick={handleLogoClick} className="focus:outline-none" aria-label="Go to homepage">
           <Logo />
-        </div>
+        </button>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden cursor-pointer" onClick={toggleMenu}>
+        <button className="md:hidden cursor-pointer" onClick={toggleMenu} aria-label="Toggle menu">
           {isMenuOpen ? <RiCloseFill size={30} /> : <RiMenu4Fill size={30} />}
-        </div>
+        </button>
 
         {/* Menu Items */}
         <div className={`md:flex gap-3 items-center ${isMenuOpen ? "flex flex-col absolute top-16 left-0 w-full bg-white p-4 shadow-lg" : "hidden md:flex"}`}>

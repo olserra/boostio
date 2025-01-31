@@ -72,6 +72,7 @@ export const Contact = () => {
         />
       </div>
       <form
+        id="contact-form"
         className="flex flex-row justify-center items-center md:pb-12"
         onSubmit={handleSubmit}
       >
