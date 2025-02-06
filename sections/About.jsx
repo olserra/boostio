@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { TypingText } from "../components";
 import styles from "../styles";
 import { fadeIn, staggerContainer } from "../utils/motion";
+import Image from "next/image";
 
 const About = () => (
   <section className={`${styles.paddings} relative z-10`}>
@@ -29,6 +30,14 @@ const About = () => (
         className="w-[18px] h-[28px] object-contain mt-[28px] text-gray-800"
       />
     </motion.div>
+    <div className="flex justify-center items-center gap-8 mt-16">
+      <h1>Meet some of our clients and partners</h1>
+      <Image className="grayscale brightness-75" src="/roche.png" width={100} height={100} alt="logo-1" />
+      <Image className="grayscale brightness-75" src="/amyris.png" width={100} height={100} alt="logo-2" />
+      <Image className="grayscale brightness-75" src="/farfetch.png" width={100} height={100} alt="logo-3" />
+      <Image className="grayscale brightness-75" src="/aws.png" width={100} height={100} alt="logo-4" />
+      <Image className="grayscale brightness-75" src="/openai.png" width={100} height={100} alt="logo-5" />
+    </div>
   </section>
 );
 

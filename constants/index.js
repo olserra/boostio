@@ -15,27 +15,27 @@ export const exploreWorlds = [
   {
     id: "world-1",
     imgUrl: Planet_1,
-    title: "Individuals",
+    title: "Mentoring & Coaching",
   },
   {
     id: "world-2",
     imgUrl: Planet_2,
-    title: "Teams",
+    title: "Hackathon",
   },
   {
     id: "world-3",
     imgUrl: Planet_3,
-    title: "Roadmaps",
+    title: "Automation",
   },
   {
     id: "world-4",
     imgUrl: Planet_4,
-    title: "Knowledge Base",
+    title: "AI Strategy",
   },
   {
     id: "world-5",
     imgUrl: Planet_5,
-    title: "Trainings",
+    title: "Software Engineering",
   },
 ];
 
