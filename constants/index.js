@@ -40,23 +40,23 @@ export const exploreWorlds = [
 ];
 
 export const startingFeatures = [
-  "Centralize your digital interactions in one place for easy access and better organization.",
-  "Get personalized recommendations that evolve with your needs, improving decision-making over time.",
-  "Seamless integration across platforms to enhance productivity and simplify your workflows.",
+  "Participate in hands-on AI training and hackathons to upskill your team and stay ahead in the industry.",
+  "Automate repetitive tasks and optimize workflows with AI-driven solutions tailored to your business needs.",
+  "Leverage expert guidance to implement AI effectively, from ideation to automation execution.",
 ];
 
 export const newFeatures = [
   {
     imgUrl: vrpano,
-    title: "Smarter Recommendations",
+    title: "AI Training & Hackathons",
     subtitle:
-      "Our platform uses AI to provide tailored insights, based on your digital memory, that enhance your decision-making process.",
+      "Engage in immersive learning experiences designed to help teams understand, experiment, and apply AI in real-world scenarios.",
   },
   {
     imgUrl: headset,
-    title: "Centralized Digital Memory",
+    title: "Custom AI Automations",
     subtitle:
-      "Boostio AI brings together all your digital interactions, making it easy to access and use insights across any platform.",
+      "Streamline your operations with AI-powered automations that enhance efficiency and reduce manual effort.",
   },
 ];
 

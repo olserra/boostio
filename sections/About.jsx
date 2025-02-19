@@ -20,8 +20,8 @@ const About = () => (
         variants={fadeIn("up", "tween", 0.2, 1)}
         className="mt-[10px] font-normal sm:text-[32px] text-[20px] text-center text-gray-600"
       >
-        <span className="font-extrabold text-gray-900">Boostio</span> is more than just your digital memory for the internet. We leverage AI and GPT along with coaching and mentoring methodologies to empower people and teams. Boostio dynamically learns and understands your personal or business profile, providing tailored insights and recommendations.{" "}
-        <span className="font-extrabold text-gray-900">Boostio AI</span> helps you make smarter decisions faster by seamlessly integrating across platforms and optimizing growth and productivity like never before.
+        <span className="font-extrabold text-gray-900">BoostioAI</span> is an agency specialized in AI training, hackathons, and automation solutions. We help businesses and teams adopt and implement AI by providing hands-on learning experiences and custom automation strategies.{" "}
+        <span className="font-extrabold text-gray-900">BoostioAI</span> empowers organizations to leverage artificial intelligence effectively, optimizing workflows and driving innovation.
       </motion.p>
       <motion.img
         variants={fadeIn("up", "tween", 0.3, 1)}
