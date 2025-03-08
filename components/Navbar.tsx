@@ -40,11 +40,10 @@ const Navbar: React.FC = () => {
     return (
         <motion.nav
             {...navMotionProps}
-            className={`fixed w-full z-50 transition-all duration-300 ${
-                isScrolled 
-                    ? "bg-black/80 backdrop-blur-md border-b border-white/10" 
-                    : "bg-transparent"
-            }`}
+            className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
+                ? "bg-black/80 backdrop-blur-md border-b border-white/10"
+                : "bg-transparent"
+                }`}
         >
             <div className="container mx-auto px-4 max-w-6xl">
                 <div className="flex items-center justify-between h-16">
@@ -78,7 +77,7 @@ const Navbar: React.FC = () => {
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
+                        className="md:hidden text-white p-2 mr-4 rounded-lg hover:bg-white/10 transition-colors"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                     >
@@ -107,9 +106,9 @@ const Navbar: React.FC = () => {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="md:hidden bg-black/80 backdrop-blur-md rounded-lg mt-2 overflow-hidden border border-white/10"
+                            className="md:hidden bg-black/80 backdrop-blur-md rounded-lg mt-2 mb-4 overflow-hidden border border-white/10"
                         >
-                            <div className="px-4 py-4 space-y-4">
+                            <div className="px-4 py-6 space-y-8">
                                 {NAV_LINKS.map((link) => (
                                     <Link key={link.name} href={link.href}>
                                         <motion.span
@@ -123,7 +122,7 @@ const Navbar: React.FC = () => {
                                 ))}
                                 <motion.button
                                     {...buttonMotionProps}
-                                    className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg shadow-blue-500/20"
+                                    className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg shadow-blue-500/20 mt-6"
                                     onClick={handleGetContacted}
                                 >
                                     Get Started

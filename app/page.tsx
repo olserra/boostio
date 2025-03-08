@@ -27,9 +27,23 @@ const Home: React.FC = () => {
     return (
         <div className="min-h-screen bg-black text-white">
             {/* Hero Section */}
-            <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden mb-24">
+                {/* Background Elements */}
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-secondary/10 to-accent/10" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
+
+                {/* Static Background Map */}
+                <div
+                    className="absolute inset-0 opacity-20"
+                    style={{
+                        backgroundImage: 'url("/map.png")',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        filter: 'blur(2px)',
+                    }}
+                />
+
+                {/* Main Content */}
                 <motion.div
                     className="container z-10"
                     {...heroMotionProps}
@@ -64,15 +78,15 @@ const Home: React.FC = () => {
             </section>
 
             {/* Services Section */}
-            <section id="services" className="py-24">
-                <div className="container">
+            <section id="services" className="py-16 md:py-32 px-4 md:px-0">
+                <div className="container mx-auto">
                     <motion.h2
-                        className="heading-2 text-center mb-16"
+                        className="heading-2 text-center mb-8 md:mb-16"
                         {...fadeIn}
                     >
                         Our Services
                     </motion.h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                         {SERVICES.map((service, index) => (
                             <motion.div
                                 key={service.title}
@@ -91,7 +105,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* About Section */}
-            <section id="about" className="py-24 bg-white/[0.02]">
+            <section id="about" className="py-16 md:py-32 px-4 md:px-0 bg-white/[0.02]">
                 <div className="container">
                     <motion.div
                         className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
@@ -99,7 +113,7 @@ const Home: React.FC = () => {
                         whileInView={{ opacity: 1 }}
                     >
                         <div>
-                            <h2 className="heading-2 mb-6">Why Choose BoostioAI?</h2>
+                            <h2 className="heading-2 mb-6 mt-12">Why Choose BoostioAI?</h2>
                             <p className="text-body mb-8">
                                 With years of experience in AI implementation and a team of experts, we deliver exceptional results for businesses of all sizes.
                             </p>
@@ -129,8 +143,8 @@ const Home: React.FC = () => {
                             transition={{ duration: 0.3 }}
                         >
                             <Image
-                                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1932&auto=format&fit=crop"
-                                alt="AI Technology"
+                                src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=1932&auto=format&fit=crop"
+                                alt="AI Technology and Innovation"
                                 fill
                                 className="object-cover"
                                 priority
@@ -141,7 +155,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* Process Section */}
-            <section id="process" className="py-24">
+            <section id="process" className="py-16 md:py-32 px-4 md:px-0">
                 <div className="container">
                     <motion.h2
                         className="heading-2 text-center mb-16"
@@ -168,15 +182,15 @@ const Home: React.FC = () => {
             </section>
 
             {/* Testimonials Section */}
-            <section id="case-studies" className="py-24 bg-white/[0.02]">
-                <div className="container">
+            <section id="case-studies" className="py-16 md:py-32 px-4 md:px-0 bg-white/[0.02]">
+                <div className="container mx-auto mt-12">
                     <motion.h2
-                        className="heading-2 text-center mb-16"
+                        className="heading-2 text-center mb-8 md:mb-16"
                         {...fadeIn}
                     >
                         What Our Clients Say
                     </motion.h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         {TESTIMONIALS.map((testimonial, index) => (
                             <motion.div
                                 key={testimonial.name}
@@ -203,12 +217,22 @@ const Home: React.FC = () => {
                             </motion.div>
                         ))}
                     </div>
+                    <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-16">
+                        <h1 className="text-center mb-8 md:mb-0">Meet some of our clients and partners</h1>
+                        <div className="grid grid-cols-3 md:flex gap-8 md:gap-8 items-center justify-center pb-8 md:pb-0">
+                            <Image className="invert grayscale brightness-100 hover:opacity-80 transition-all duration-300 w-20 md:w-[100px] h-auto" src="/roche.png" width={100} height={100} alt="logo-1" />
+                            <Image className="invert grayscale brightness-100 hover:opacity-80 transition-all duration-300 w-20 md:w-[100px] h-auto" src="/amyris.png" width={100} height={100} alt="logo-2" />
+                            <Image className="invert grayscale brightness-100 hover:opacity-80 transition-all duration-300 w-20 md:w-[100px] h-auto" src="/farfetch.png" width={100} height={100} alt="logo-3" />
+                            <Image className="invert grayscale brightness-100 hover:opacity-80 transition-all duration-300 w-20 md:w-[100px] h-auto" src="/aws.png" width={100} height={100} alt="logo-4" />
+                            <Image className="invert grayscale brightness-100 hover:opacity-80 transition-all duration-300 w-20 md:w-[100px] h-auto" src="/openai.png" width={100} height={100} alt="logo-5" />
+                        </div>
+                    </div>
                 </div>
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="py-24">
-                <div className="container max-w-3xl">
+            <section id="contact" className="py-16 md:py-32 px-4 md:px-0">
+                <div className="container mx-auto max-w-3xl">
                     <motion.div
                         className="card p-8 text-center"
                         initial={{ opacity: 0, y: 20 }}

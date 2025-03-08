@@ -17,11 +17,11 @@
 
 @layer components {
   .container {
-    @apply mx-auto px-4 max-w-6xl;
+    @apply mx-auto px-4 md:px-6 max-w-6xl;
   }
 
   .card {
-    @apply bg-white/[0.05] backdrop-blur-md border border-white/10 rounded-xl transition-all duration-200;
+    @apply bg-white/[0.05] backdrop-blur-md border border-white/10 rounded-xl transition-all duration-200 mx-auto;
   }
 
   .card:hover {
