@@ -129,7 +129,7 @@ const Home: React.FC = () => {
                             transition={{ duration: 0.3 }}
                         >
                             <Image
-                                src="/about-image.jpg"
+                                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1932&auto=format&fit=crop"
                                 alt="AI Technology"
                                 fill
                                 className="object-cover"
