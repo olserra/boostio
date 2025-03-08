@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     keywords: "AI, Automation, LLMs, Agents, Sentiment Analysis, Software Engineering, Web Development, App Development",
     authors: [{ name: "Boostio" }],
     metadataBase: new URL('https://boostio.ai'),
+    icons: {
+        icon: '/thumbnail.png',
+        shortcut: '/thumbnail.png',
+        apple: '/thumbnail.png',
+    },
     openGraph: {
         title: "Boostio - AI and Automation Agency",
         description: "Boostio provides a wide range of services including LLMs, Agents, Sentiment Analysis, Automations, and Software Engineering to help businesses achieve their goals.",

@@ -39,24 +39,24 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="border-t border-white/10 pt-8">
-                    <div className="flex flex-col md:flex-row justify-between items-center">
+                    <div className="flex flex-col md:flex-row justify-between items-start mb-8">
                         <div className="mb-4 md:mb-0">
                             <h2 className="text-xl font-bold">BoostioAI</h2>
                             <p className="text-sm text-gray-400 mt-2">
                                 Transforming businesses through AI innovation
                             </p>
                         </div>
-                        <div className="flex space-x-4">
+                        <div className="flex space-x-4 h-fit">
                             <a
-                                href="https://www.linkedin.com/company/boostio-ai"
+                                href="https://www.x.com/boostio_ai"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10"
-                                aria-label="LinkedIn"
+                                aria-label="X.com"
                             >
                                 <img
-                                    src="https://img.icons8.com/ios_filled/512/linkedin.png"
-                                    alt="LinkedIn"
+                                    src="/x.png"
+                                    alt="X.com"
                                     className="w-6 h-5 invert brightness-0"
                                 />
                             </a>
