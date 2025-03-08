@@ -27,7 +27,7 @@ const Home: React.FC = () => {
     return (
         <div className="min-h-screen bg-black text-white">
             {/* Hero Section */}
-            <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden mb-24">
+            <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden mb-32 md:mb-48">
                 {/* Background Elements */}
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-secondary/10 to-accent/10" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
@@ -78,10 +78,10 @@ const Home: React.FC = () => {
             </section>
 
             {/* Services Section */}
-            <section id="services" className="py-16 md:py-32 px-4 md:px-0">
+            <section id="services" className="py-24 md:py-32 px-8 md:px-0">
                 <div className="container mx-auto">
                     <motion.h2
-                        className="heading-2 text-center mb-8 md:mb-16"
+                        className="heading-2 text-center mb-12 md:mb-20"
                         {...fadeIn}
                     >
                         Our Services
@@ -105,7 +105,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* About Section */}
-            <section id="about" className="py-16 md:py-32 px-4 md:px-0 bg-white/[0.02]">
+            <section id="about" className="py-24 md:py-32 px-8 md:px-0 bg-white/[0.02]">
                 <div className="container">
                     <motion.div
                         className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
@@ -155,7 +155,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* Process Section */}
-            <section id="process" className="py-16 md:py-32 px-4 md:px-0">
+            <section id="process" className="py-24 md:py-32 px-8 md:px-0">
                 <div className="container">
                     <motion.h2
                         className="heading-2 text-center mb-16"
@@ -182,8 +182,8 @@ const Home: React.FC = () => {
             </section>
 
             {/* Testimonials Section */}
-            <section id="case-studies" className="py-16 md:py-32 px-4 md:px-0 bg-white/[0.02]">
-                <div className="container mx-auto mt-12">
+            <section id="case-studies" className="py-24 md:py-32 px-8 md:px-0 bg-white/[0.02]">
+                <div className="container mx-auto">
                     <motion.h2
                         className="heading-2 text-center mb-8 md:mb-16"
                         {...fadeIn}
@@ -231,7 +231,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="py-16 md:py-32 px-4 md:px-0">
+            <section id="contact" className="py-24 md:py-32 px-8 md:px-0">
                 <div className="container mx-auto max-w-3xl">
                     <motion.div
                         className="card p-8 text-center"

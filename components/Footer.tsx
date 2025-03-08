@@ -13,9 +13,9 @@ const Footer: React.FC = () => {
     };
 
     return (
-        <footer className="bg-black text-white pt-16 pb-8 border-t border-white/10">
-            <div className="container mx-auto px-4 max-w-6xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <footer className="bg-black text-white pt-24 pb-12 border-t border-white/10">
+            <div className="container mx-auto px-8 max-w-6xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                     {FOOTER_SECTIONS.map((section, index) => (
                         <motion.div
                             key={section.title}

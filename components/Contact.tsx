@@ -60,9 +60,9 @@ export const Contact: React.FC = () => {
     };
 
     return (
-        <div className="lg:py-8 px-4 md:px-12 mx-auto max-w-screen-2xl text-center lg:px-6">
-            <div className="mx-auto max-w-screen-sm mt-12">
-                <p className="pb-2 lg:pb-4 lg:py-0 text-sm md:text-lg text-gray-800">
+        <div className="lg:py-16 px-8 md:px-16 mx-auto max-w-screen-2xl text-center lg:px-8">
+            <div className="mx-auto max-w-screen-sm mt-16">
+                <p className="pb-4 lg:pb-6 lg:py-0 text-sm md:text-lg text-gray-800">
                     CONTACT US{" "}
                 </p>
                 <TitleText
@@ -72,11 +72,11 @@ export const Contact: React.FC = () => {
             </div>
             <form
                 id="contact-form"
-                className="flex flex-row justify-center items-center md:pb-12"
+                className="flex flex-row justify-center items-center md:pb-16"
                 onSubmit={handleSubmit}
             >
                 <section className="text-gray-700 body-font relative w-full">
-                    <div className="container px-5 md:py-12 mx-auto">
+                    <div className="container px-8 md:py-16 mx-auto">
                         <div className="lg:w-1/2 md:w-2/3 mx-auto">
                             <div className="flex flex-wrap -m-2">
                                 <div className="p-2 w-full md:w-1/2">
