@@ -1,11 +1,19 @@
 import React, { useEffect } from "react";
 
-const Button = ({
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    className?: string;
+    children: React.ReactNode;
+    onClick?: () => void;
+    type?: "button" | "submit" | "reset";
+    disabled?: boolean;
+}
+
+const Button: React.FC<ButtonProps> = ({
     className,
     children,
     onClick,
-    type = "button", // Default type
-    disabled = false, // Default disabled state
+    type = "button",
+    disabled = false,
     ...props
 }) => {
     const baseStyle =
@@ -31,4 +39,4 @@ const Button = ({
     );
 };
 
-export default Button;
+export default Button; 
