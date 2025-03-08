@@ -1,138 +1,126 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/navigation";
-import { useScroll } from "@/hooks/useScroll";
-import { scrollToElement } from "@/utils/scroll";
-import { NAV_LINKS } from "@/constants";
-import { MotionProps } from "@/types";
-import Logo from "./Logo";
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
+import Logo from './Logo';
 
-const Navbar: React.FC = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-    const router = useRouter();
-    const isScrolled = useScroll();
+const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
-    const handleLogoClick = (): void => {
-        router.push("/");
-    };
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-    const handleGetContacted = (): void => {
-        scrollToElement("contact");
-    };
 
-    const navMotionProps: MotionProps = {
-        initial: { y: -100 },
-        animate: { y: 0 }
-    };
+    const menuItems = [
+        { name: 'What we do', href: '#services' },
+        { name: 'Work', href: '#case-studies' },
+        { name: 'Our story', href: '#about' },
+        { name: 'Insights', href: '#process' },
+        { name: "Let's chat", href: 'https://wa.me/351914127195' },
+    ];
 
-    const linkMotionProps: MotionProps = {
-        whileHover: { scale: 1.02 }
-    };
-
-    const buttonMotionProps: MotionProps = {
-        whileHover: { scale: 1.02 },
-        whileTap: { scale: 0.98 }
+    const menuVariants = {
+        closed: {
+            opacity: 0,
+            x: '100%',
+            transition: {
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+            },
+        },
+        open: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+            },
+        },
     };
 
     return (
-        <motion.nav
-            {...navMotionProps}
-            className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
-                ? "bg-black/80 backdrop-blur-md border-b border-white/10"
-                : "bg-transparent"
-                }`}
-        >
-            <div className="container mx-auto px-4 max-w-6xl">
-                <div className="flex items-center justify-between h-16">
-                    {/* Logo */}
-                    <Link href="/">
-                        <motion.div {...linkMotionProps} className="text-xl font-bold text-white">
-                            <Logo />
-                        </motion.div>
-                    </Link>
+        <>
+            <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-4 bg-white/90 backdrop-blur-md border-b border-gray-100' : 'py-6'}`}>
+                <nav className="container flex items-center justify-between">
+                    <Logo />
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-8">
-                        {NAV_LINKS.map((link) => (
-                            <Link key={link.name} href={link.href}>
-                                <motion.span
-                                    {...linkMotionProps}
-                                    className="text-sm text-gray-300 hover:text-white transition-colors cursor-pointer font-medium"
-                                >
-                                    {link.name}
-                                </motion.span>
+                    {/* Desktop Menu */}
+                    <div className="hidden md:flex items-center gap-8">
+                        {menuItems.map((item) => (
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                                className="text-gray-700 font-medium hover:text-[#FF5C35] transition-colors duration-300"
+                            >
+                                {item.name}
                             </Link>
                         ))}
-                        <motion.button
-                            {...buttonMotionProps}
-                            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg shadow-blue-500/20"
-                            onClick={handleGetContacted}
-                        >
-                            Get Started
-                        </motion.button>
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <button
-                        className="md:hidden text-white p-2 mr-4 rounded-lg hover:bg-white/10 transition-colors"
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-                    >
-                        <svg
-                            className="w-5 h-5"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
+                    <div className="md:hidden flex items-center gap-8">
+                        <button
+                            onClick={() => setIsOpen(true)}
+                            className="text-gray-700 font-medium hover:text-[#FF5C35] transition-colors duration-300"
                         >
-                            {isMobileMenuOpen ? (
-                                <path d="M6 18L18 6M6 6l12 12" />
-                            ) : (
-                                <path d="M4 6h16M4 12h16M4 18h16" />
-                            )}
-                        </svg>
-                    </button>
-                </div>
+                            Menu
+                        </button>
+                    </div>
+                </nav>
+            </header>
 
-                {/* Mobile Menu */}
-                <AnimatePresence>
-                    {isMobileMenuOpen && (
+            <AnimatePresence>
+                {isOpen && (
+                    <>
                         <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="md:hidden bg-black/80 backdrop-blur-md rounded-lg mt-2 mb-4 overflow-hidden border border-white/10"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="fixed inset-0 bg-black/20 backdrop-blur-md z-40"
+                            onClick={() => setIsOpen(false)}
+                        />
+
+                        <motion.nav
+                            variants={menuVariants}
+                            initial="closed"
+                            animate="open"
+                            exit="closed"
+                            className="fixed right-0 top-0 bottom-0 w-full md:w-[500px] bg-white z-50 p-8 overflow-y-auto"
                         >
-                            <div className="px-4 py-6 space-y-8">
-                                {NAV_LINKS.map((link) => (
-                                    <Link key={link.name} href={link.href}>
-                                        <motion.span
-                                            {...linkMotionProps}
-                                            className="block text-sm text-gray-300 hover:text-white transition-colors cursor-pointer font-medium"
-                                            onClick={() => setIsMobileMenuOpen(false)}
-                                        >
-                                            {link.name}
-                                        </motion.span>
+                            <div className="flex justify-end mb-8">
+                                <button
+                                    onClick={() => setIsOpen(false)}
+                                    className="text-[#111111] hover:text-[#FF5C35] transition-colors duration-300"
+                                >
+                                    Close
+                                </button>
+                            </div>
+
+                            <div className="flex flex-col gap-8">
+                                {menuItems.map((item) => (
+                                    <Link
+                                        key={item.name}
+                                        href={item.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className="text-4xl font-bold text-[#111111] hover:text-[#FF5C35] transition-colors duration-300"
+                                    >
+                                        {item.name}
                                     </Link>
                                 ))}
-                                <motion.button
-                                    {...buttonMotionProps}
-                                    className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg shadow-blue-500/20 mt-6"
-                                    onClick={handleGetContacted}
-                                >
-                                    Get Started
-                                </motion.button>
                             </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </div>
-        </motion.nav>
+                        </motion.nav>
+                    </>
+                )}
+            </AnimatePresence>
+        </>
     );
 };
 

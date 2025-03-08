@@ -4,6 +4,26 @@ export interface Service {
     icon: string;
 }
 
+export interface Statistic {
+    label: string;
+    value: string;
+}
+
+export interface CompanyValue {
+    title: string;
+    description: string;
+}
+
+
+export interface CaseStudy {
+    title: string;
+    client: string;
+    description: string;
+    image: string;
+    color: string;
+    stats: string[];
+}
+
 export interface Testimonial {
     name: string;
     role: string;

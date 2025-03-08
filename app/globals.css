@@ -2,108 +2,130 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  --foreground-rgb: 31, 41, 55;
+  --background-rgb: 255, 255, 255;
+  --primary: #FF5C35;
+  --secondary: #4C6FFF;
+  --accent: #00E6C3;
 }
 
 @layer base {
   body {
-    @apply bg-black text-white antialiased;
+    @apply bg-white text-gray-800 antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
 @layer components {
   .container {
-    @apply mx-auto px-4 md:px-6 max-w-6xl;
+    @apply mx-auto px-6 md:px-8 max-w-[1400px];
+  }
+
+  .section {
+    @apply py-24 md:py-32;
   }
 
   .card {
-    @apply bg-white/[0.05] backdrop-blur-md border border-white/10 rounded-xl transition-all duration-200 mx-auto;
+    @apply bg-gray-50 backdrop-blur-md rounded-none border-t border-gray-100 transition-all duration-500;
   }
 
   .card:hover {
-    @apply transform -translate-y-0.5 border-white/20 shadow-lg shadow-black/20;
+    @apply bg-gray-100;
   }
 
   .btn {
-    @apply px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200;
+    @apply px-6 py-3 rounded-none font-medium text-base transition-all duration-300 inline-block;
   }
 
   .btn-primary {
-    @apply bg-primary hover:bg-primary-dark text-white shadow-lg shadow-primary/20;
+    @apply bg-[#FF5C35] hover:bg-[#FF7355] text-white;
   }
 
   .btn-secondary {
-    @apply bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm;
+    @apply bg-transparent border border-gray-800 hover:bg-gray-800 hover:text-white text-gray-800 transition-colors;
   }
 
   .heading-1 {
-    @apply text-5xl md:text-7xl font-bold leading-tight;
+    @apply text-6xl md:text-8xl font-bold leading-[1.1] tracking-tight text-gray-800;
   }
 
   .heading-2 {
-    @apply text-3xl md:text-4xl font-bold;
+    @apply text-4xl md:text-6xl font-bold leading-tight tracking-tight text-gray-800;
   }
 
   .heading-3 {
-    @apply text-xl font-semibold;
+    @apply text-2xl md:text-3xl font-bold tracking-tight text-gray-800;
   }
 
   .text-body {
-    @apply text-base text-gray-300;
+    @apply text-lg text-gray-700 leading-relaxed;
   }
 
   .text-small {
-    @apply text-sm text-gray-400;
+    @apply text-base text-gray-600;
+  }
+
+  .nav-link {
+    @apply text-lg font-medium text-gray-800 hover:text-[#FF5C35] transition-colors duration-300;
   }
 }
 
 /* Modern scrollbar */
 ::-webkit-scrollbar {
-  @apply w-2;
+  @apply w-1;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-black;
+  @apply bg-white;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-800 rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-700;
+  @apply bg-gray-200 hover:bg-gray-300;
 }
 
 /* Modern selection */
 ::selection {
-  @apply bg-primary text-white;
+  @apply bg-[#FF5C35] text-white;
 }
 
 /* Modern focus styles */
 *:focus-visible {
-  @apply outline-2 outline-primary outline-offset-2;
+  @apply outline-none ring-2 ring-[#FF5C35] ring-offset-2 ring-offset-white;
 }
 
 /* Modern link styles */
 a {
-  @apply text-primary hover:text-primary-dark transition-colors duration-200;
-}
-
-/* Modern button styles */
-button {
-  @apply font-medium transition-all duration-200;
+  @apply text-gray-800 hover:text-[#FF5C35] transition-colors duration-300;
 }
 
 /* Modern input styles */
 input, textarea {
-  @apply bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200;
+  @apply bg-gray-50 border-0 rounded-none px-4 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-200 transition-all duration-300;
 }
 
 /* Modern gradient text */
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#FF5C35] via-[#4C6FFF] to-[#00E6C3];
+}
+
+/* Ustwo-style transitions */
+.hover-lift {
+  @apply transition-transform duration-500 hover:-translate-y-1;
+}
+
+.hover-image {
+  @apply transition-all duration-500 hover:scale-[1.02];
+}
+
+/* Grid layouts */
+.grid-layout {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0;
+}
+
+/* Section transitions */
+.section-divide {
+  @apply border-t border-gray-100;
 } 

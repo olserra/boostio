@@ -1,9 +1,18 @@
-import { Inter } from "next/font/google";
+import { Space_Grotesk, Vampiro_One } from "next/font/google";
 import "./globals.css";
 import { Metadata, Viewport } from "next";
 import { Navbar, Footer } from "@/components";
 
-const inter = Inter({ subsets: ["latin"] });
+const spaceGrotesk = Space_Grotesk({
+    subsets: ["latin"],
+    display: 'swap',
+});
+
+const vampiroOne = Vampiro_One({
+    weight: ['400'],  // Vampiro One only comes in regular weight
+    subsets: ['latin'],
+    display: 'swap',
+});
 
 export const viewport: Viewport = {
     width: "device-width",
@@ -44,10 +53,12 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
     return (
-        <html lang="en">
-            <body className={inter.className}>
+        <html lang="en" className={spaceGrotesk.className}>
+            <body className="bg-white text-[#111111] selection:bg-[#FF5C35] selection:text-white">
                 <Navbar />
-                {children}
+                <main className="pt-20">
+                    {children}
+                </main>
                 <Footer />
             </body>
         </html>

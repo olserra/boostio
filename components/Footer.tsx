@@ -2,64 +2,98 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { FOOTER_SECTIONS } from "@/constants";
-import { MotionProps } from "@/types";
+import { Logo } from "@/components";
 
-const Footer: React.FC = () => {
-    const sectionMotionProps: MotionProps = {
-        initial: { opacity: 0, y: 20 },
-        whileInView: { opacity: 1, y: 0 }
-    };
+const Footer = () => {
+    const footerLinks = [
+        {
+            title: 'What we do',
+            links: [
+                { name: 'AI Consulting', href: '#services' },
+                { name: 'Automation', href: '#services' },
+                { name: 'Development', href: '#services' },
+                { name: 'Training', href: '#services' },
+            ],
+        },
+        {
+            title: 'Company',
+            links: [
+                { name: 'About Us', href: '#about' },
+                { name: 'Case Studies', href: '#case-studies' },
+                { name: 'Process', href: '#process' },
+                { name: 'Contact', href: '#contact' },
+            ],
+        },
+        {
+            title: 'Legal',
+            links: [
+                { name: 'Privacy Policy', href: '/privacy-policy' },
+                { name: 'Terms of Service', href: '/terms-of-service' },
+                { name: 'Cookie Policy', href: '/cookie-policy' },
+                { name: 'GDPR', href: '/gdpr' },
+            ],
+        },
+    ];
+
+    const socialLinks = [
+        { name: 'LinkedIn', href: '#' },
+        { name: 'Twitter', href: '#' },
+        { name: 'Instagram', href: '#' },
+    ];
 
     return (
-        <footer className="bg-black text-white pt-24 pb-12 border-t border-white/10">
-            <div className="container mx-auto px-8 max-w-6xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                    {FOOTER_SECTIONS.map((section, index) => (
-                        <motion.div
-                            key={section.title}
-                            {...sectionMotionProps}
-                            transition={{ delay: index * 0.1 }}
-                        >
-                            <h3 className="text-sm font-semibold text-gray-400 mb-4 uppercase tracking-wider">{section.title}</h3>
+        <footer className="bg-white border-t border-gray-100">
+            <div className="container py-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+                    {/* Logo and Contact */}
+                    <div className="lg:col-span-2">
+                        <Logo />
+                        <p className="mt-6 text-gray-500 max-w-sm">
+                            Transform your business with AI innovation through consultancy, automation, hackathons, and training programs.
+                        </p>
+                        <div className="mt-6">
+                            <a href="mailto:hello@boostio.ai" className="text-[#111111] hover:text-[#FF5C35] transition-colors duration-300">
+                                hello@boostio.ai
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Links */}
+                    {footerLinks.map((section) => (
+                        <div key={section.title}>
+                            <h3 className="text-sm font-semibold text-[#111111] mb-4">{section.title}</h3>
                             <ul className="space-y-3">
                                 {section.links.map((link) => (
                                     <li key={link.name}>
-                                        <Link href={link.href}>
-                                            <span className="text-sm text-gray-400 hover:text-white transition-colors cursor-pointer">
-                                                {link.name}
-                                            </span>
+                                        <Link
+                                            href={link.href}
+                                            className="text-gray-500 hover:text-[#FF5C35] transition-colors duration-300"
+                                        >
+                                            {link.name}
                                         </Link>
                                     </li>
                                 ))}
                             </ul>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
 
-                <div className="border-t border-white/10 pt-8">
-                    <div className="flex flex-col md:flex-row justify-between items-start mb-8">
-                        <div className="mb-4 md:mb-0">
-                            <h2 className="text-xl font-bold">BoostioAI</h2>
-                            <p className="text-sm text-gray-400 mt-2">
-                                Transforming businesses through AI innovation
-                            </p>
-                        </div>
-                        <div className="flex space-x-4 h-fit">
-                            <a
-                                href="https://www.x.com/boostio_ai"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10"
-                                aria-label="X.com"
-                            >
-                                <img
-                                    src="/x.png"
-                                    alt="X.com"
-                                    className="w-6 h-5 invert brightness-0"
-                                />
-                            </a>
+                {/* Bottom Bar */}
+                <div className="mt-12 pt-8 border-t border-gray-100">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p className="text-gray-500 text-sm">
+                            © {new Date().getFullYear()} Boostio. All rights reserved.
+                        </p>
+                        <div className="flex gap-6">
+                            {socialLinks.map((link) => (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    className="text-gray-500 hover:text-[#FF5C35] transition-colors duration-300"
+                                >
+                                    {link.name}
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </div>

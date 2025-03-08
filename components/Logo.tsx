@@ -1,23 +1,22 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { MotionProps } from "@/types";
+import Link from "next/link";
+import { Vampiro_One } from "next/font/google";
 
-const Logo: React.FC = () => {
-    const motionProps: MotionProps = {
-        whileHover: { scale: 1.05 }
-    };
+const vampiroOne = Vampiro_One({
+    weight: ['400'],  // Vampiro One only comes in regular weight
+    subsets: ['latin'],
+    display: 'swap',
+});
 
+const Logo = () => {
     return (
-        <motion.div
-            {...motionProps}
-            className="flex items-center space-x-2"
-        >
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
-                BoostioAI
+        <Link href="/" className="relative group">
+            <span className={`${vampiroOne.className} text-3xl [letter-spacing:-0.05em] font-normal bg-clip-text text-gray-700 bg-gradient-to-r from-[#000000] to-[#333333] transition-all duration-300 group-hover:from-[#FF5C35] group-hover:to-[#00E6C3]`}>
+                boostio
             </span>
-        </motion.div>
+        </Link>
     );
 };
 
