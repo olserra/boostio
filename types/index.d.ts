@@ -4,6 +4,15 @@ export interface Service {
     icon: string;
 }
 
+export interface WhatWeDoItem {
+    title: string;
+    description: string;
+    client: string;
+    color: string;
+    icon: string;
+}
+
+
 export interface Statistic {
     label: string;
     value: string;

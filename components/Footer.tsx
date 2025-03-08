@@ -18,7 +18,7 @@ const Footer = () => {
         {
             title: 'Company',
             links: [
-                { name: 'About Us', href: '#about' },
+                { name: 'About Us', href: '/about' },
                 { name: 'Case Studies', href: '#case-studies' },
                 { name: 'Process', href: '#process' },
                 { name: 'Contact', href: '#contact' },
@@ -46,13 +46,13 @@ const Footer = () => {
             <div className="container py-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
                     {/* Logo and Contact */}
-                    <div className="lg:col-span-2">
+                    <div className="lg:col-span-2 space-y-6">
                         <Logo />
-                        <p className="mt-6 text-gray-500 max-w-sm">
+                        <p className="text-gray-500 max-w-sm">
                             Transform your business with AI innovation through consultancy, automation, hackathons, and training programs.
                         </p>
-                        <div className="mt-6">
-                            <a href="mailto:hello@boostio.ai" className="text-[#111111] hover:text-[#FF5C35] transition-colors duration-300">
+                        <div>
+                            <a href="mailto:hello@boostio.ai" className="text-gray-500 hover:text-[#FF5C35] transition-colors duration-300">
                                 hello@boostio.ai
                             </a>
                         </div>
@@ -60,8 +60,8 @@ const Footer = () => {
 
                     {/* Links */}
                     {footerLinks.map((section) => (
-                        <div key={section.title}>
-                            <h3 className="text-sm font-semibold text-[#111111] mb-4">{section.title}</h3>
+                        <div key={section.title} className="space-y-4">
+                            <h3 className="text-sm font-semibold text-[#111111]">{section.title}</h3>
                             <ul className="space-y-3">
                                 {section.links.map((link) => (
                                     <li key={link.name}>
@@ -80,11 +80,11 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="mt-12 pt-8 border-t border-gray-100">
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                         <p className="text-gray-500 text-sm">
                             © {new Date().getFullYear()} Boostio. All rights reserved.
                         </p>
-                        <div className="flex gap-6">
+                        <div className="flex items-center gap-8">
                             {socialLinks.map((link) => (
                                 <a
                                     key={link.name}

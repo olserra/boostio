@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { WhatWeDoItem } from '../types';
+import { WhatWeDoItem } from '@/types';
 
 const WhatWeDoCard = ({ item, index }: { item: WhatWeDoItem; index: number }) => (
     <motion.div
