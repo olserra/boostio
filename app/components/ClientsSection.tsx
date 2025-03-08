@@ -5,7 +5,7 @@ const ClientsSection = () => {
     return (
         <div className="flex flex-col items-center mt-16">
             <h1 className="mb-8">Meet some of our clients and partners</h1>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 px-4 place-items-center justify-center max-w-6xl w-full">
+            <div className="grid grid-cols-2 md:flex md:flex-row md:justify-between gap-8 px-4 items-center max-w-6xl w-full">
                 <Image className="grayscale brightness-75" src="/roche.png" width={100} height={100} alt="logo-1" />
                 <Image className="grayscale brightness-75" src="/amyris.png" width={100} height={100} alt="logo-2" />
                 <Image className="grayscale brightness-75" src="/farfetch.png" width={100} height={100} alt="logo-3" />
