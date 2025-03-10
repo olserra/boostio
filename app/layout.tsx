@@ -9,7 +9,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const vampiroOne = Vampiro_One({
-    weight: ['400'],  // Vampiro One only comes in regular weight
+    weight: ['400'],
     subsets: ['latin'],
     display: 'swap',
 });
