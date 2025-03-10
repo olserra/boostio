@@ -44,8 +44,8 @@ const Contact = () => {
                                 Ready to transform your business with AI? Let's start a conversation.
                             </p>
                             <div className="flex items-center gap-4">
-                                <a href="mailto:hello@boostio.ai" className="text-2xl text-gray-800 hover:text-[#FF5C35] transition-colors duration-300">
-                                    contact@boostio.ai →
+                                <a href="https://wa.me/351914127195" className="text-2xl text-gray-800 hover:text-[#FF5C35] transition-colors duration-300">
+                                    Contact us →
                                 </a>
                             </div>
                         </div>

@@ -52,8 +52,8 @@ const Footer = () => {
                             Transform your business with AI innovation through consultancy, automation, hackathons, and training programs.
                         </p>
                         <div>
-                            <a href="mailto:hello@boostio.ai" className="text-gray-500 hover:text-[#FF5C35] transition-colors duration-300">
-                                hello@boostio.ai
+                            <a href="https://wa.me/351914127195" className="text-gray-500 hover:text-[#FF5C35] transition-colors duration-300">
+                                Contact us →
                             </a>
                         </div>
                     </div>

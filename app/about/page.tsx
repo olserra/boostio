@@ -58,7 +58,7 @@ const AboutPage = () => {
                                 </svg>
                             </Link>
                             <Link
-                                href="mailto:hello@boostio.ai"
+                                href="https://wa.me/351914127195"
                                 className="inline-flex items-center gap-2 text-[#FF5C35] hover:text-[#FF8B6C] transition-colors duration-300"
                             >
                                 <span>Contact</span>
