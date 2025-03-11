@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { PiMagnifyingGlass, PiRocketLaunch, PiSparkle, PiLightning } from 'react-icons/pi';
 import { WhatWeDoItem } from '@/types';
 
 const WhatWeDoCard = ({ item, index }: { item: WhatWeDoItem; index: number }) => (
@@ -27,28 +28,28 @@ const WhatWeDo = () => {
             description: "Validate new AI products, experiences, services or business models",
             client: "Roche",
             color: "from-[#FF5C35] to-[#FF8B6C]",
-            icon: "🔍"
+            icon: <PiMagnifyingGlass className="w-8 h-8" />
         },
         {
             title: "Pilot",
             description: "Make it real and try it out in the real world",
             client: "Amyris",
             color: "from-[#4C6FFF] to-[#84A1FF]",
-            icon: "🚀"
+            icon: <PiRocketLaunch className="w-8 h-8" />
         },
         {
             title: "Launch",
             description: "Pick the highest value features and iterate towards success",
             client: "Farfetch",
             color: "from-[#00E6C3] to-[#4DFFD9]",
-            icon: "✨"
+            icon: <PiSparkle className="w-8 h-8" />
         },
         {
             title: "Boost",
             description: "Supercharge your team's potential with new capabilities",
             client: "Feegow",
             color: "from-[#FF5C35] to-[#FF8B6C]",
-            icon: "⚡"
+            icon: <PiLightning className="w-8 h-8" />
         }
     ];
 

@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface Service {
     title: string;
     description: string;
@@ -9,7 +11,7 @@ export interface WhatWeDoItem {
     description: string;
     client: string;
     color: string;
-    icon: string;
+    icon: React.ReactNode;
 }
 
 

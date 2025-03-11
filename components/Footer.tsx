@@ -36,9 +36,8 @@ const Footer = () => {
     ];
 
     const socialLinks = [
-        { name: 'LinkedIn', href: '#' },
-        { name: 'Twitter', href: '#' },
-        { name: 'Instagram', href: '#' },
+        { name: 'LinkedIn', href: 'https://linkedin.com/company/boostioai' },
+        { name: 'X', href: 'https://twitter.com/boostio_ai' },
     ];
 
     return (
@@ -89,6 +88,8 @@ const Footer = () => {
                                 <a
                                     key={link.name}
                                     href={link.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-gray-500 hover:text-[#FF5C35] transition-colors duration-300"
                                 >
                                     {link.name}
