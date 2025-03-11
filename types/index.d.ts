@@ -9,7 +9,6 @@ export interface Service {
 export interface WhatWeDoItem {
     title: string;
     description: string;
-    client: string;
     color: string;
     icon: React.ReactNode;
 }

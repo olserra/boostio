@@ -17,7 +17,6 @@ const WhatWeDoCard = ({ item, index }: { item: WhatWeDoItem; index: number }) =>
         <span className="text-4xl mb-4 block">{item.icon}</span>
         <h3 className="heading-3 mb-4">{item.title}</h3>
         <p className="text-body mb-4">{item.description}</p>
-        <span className="text-small">{item.client}</span>
     </motion.div>
 );
 
@@ -25,29 +24,25 @@ const WhatWeDo = () => {
     const items: WhatWeDoItem[] = [
         {
             title: "Discover",
-            description: "Validate new AI products, experiences, services or business models",
-            client: "Roche",
+            description: "Understand your business needs and goals",
             color: "from-[#FF5C35] to-[#FF8B6C]",
             icon: <PiMagnifyingGlass className="w-8 h-8" />
         },
         {
             title: "Pilot",
             description: "Make it real and try it out in the real world",
-            client: "Amyris",
             color: "from-[#4C6FFF] to-[#84A1FF]",
             icon: <PiRocketLaunch className="w-8 h-8" />
         },
         {
             title: "Launch",
             description: "Pick the highest value features and iterate towards success",
-            client: "Farfetch",
             color: "from-[#00E6C3] to-[#4DFFD9]",
             icon: <PiSparkle className="w-8 h-8" />
         },
         {
             title: "Boost",
             description: "Supercharge your team's potential with new capabilities",
-            client: "Feegow",
             color: "from-[#FF5C35] to-[#FF8B6C]",
             icon: <PiLightning className="w-8 h-8" />
         }
@@ -65,7 +60,7 @@ const WhatWeDo = () => {
                             <p className="text-xl text-gray-700 mb-8 max-w-lg">
                                 We help businesses harness the power of AI through strategic consulting, automation solutions, and expert implementation.
                             </p>
-                            <Link href="#services" className="text-2xl text-gray-800 hover:text-[#FF5C35] transition-colors duration-300">
+                            <Link href="/services" className="text-2xl text-gray-800 hover:text-[#FF5C35] transition-colors duration-300">
                                 Read about what we do →
                             </Link>
                         </div>

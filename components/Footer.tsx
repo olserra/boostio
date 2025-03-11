@@ -9,10 +9,10 @@ const Footer = () => {
         {
             title: 'What we do',
             links: [
-                { name: 'AI Consulting', href: '#services' },
-                { name: 'Automation', href: '#services' },
-                { name: 'Development', href: '#services' },
-                { name: 'Training', href: '#services' },
+                { name: 'AI Consulting', href: '#work' },
+                { name: 'Automation', href: '#work' },
+                { name: 'Development', href: '#work' },
+                { name: 'Training', href: '#work' },
             ],
         },
         {

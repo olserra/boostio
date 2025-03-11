@@ -17,12 +17,11 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-
     const menuItems = [
-        { name: 'What we do', href: '#services' },
-        { name: 'Work', href: '#case-studies' },
+        { name: 'What we do', href: '#what-we-do' },
+        { name: 'Work', href: '#work' },
         { name: 'Our story', href: '/about' },
-        { name: 'Insights', href: '#process' },
+        { name: 'Insights', href: '#insights' },
         { name: "Let's chat", href: 'https://wa.me/351914127195' },
     ];
 
@@ -45,6 +44,17 @@ const Navbar = () => {
         },
     };
 
+    const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const element = document.querySelector(href);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                setIsOpen(false);
+            }
+        }
+    };
+
     return (
         <>
             <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-4 bg-white/90 backdrop-blur-md border-b border-gray-100' : 'py-6'}`}>
@@ -57,6 +67,7 @@ const Navbar = () => {
                             <Link
                                 key={item.name}
                                 href={item.href}
+                                onClick={(e) => handleAnchorClick(e, item.href)}
                                 className="text-gray-700 font-medium hover:text-[#FF5C35] transition-colors duration-300"
                             >
                                 {item.name}
@@ -109,7 +120,10 @@ const Navbar = () => {
                                     <Link
                                         key={item.name}
                                         href={item.href}
-                                        onClick={() => setIsOpen(false)}
+                                        onClick={(e) => {
+                                            handleAnchorClick(e, item.href);
+                                            setIsOpen(false);
+                                        }}
                                         className="text-4xl font-bold text-[#111111] hover:text-[#FF5C35] transition-colors duration-300"
                                     >
                                         {item.name}

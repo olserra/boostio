@@ -12,9 +12,15 @@ export default function Home() {
     return (
         <>
             <Hero />
-            <WhatWeDo />
-            <CaseStudies />
-            <AIApproach />
+            <section id="what-we-do">
+                <WhatWeDo />
+            </section>
+            <section id="work">
+                <CaseStudies />
+            </section>
+            <section id="insights">
+                <AIApproach />
+            </section>
             <Testimonials />
             <Contact />
         </>
