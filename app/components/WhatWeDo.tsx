@@ -46,7 +46,7 @@ const WhatWeDo = () => {
         {
             title: "Boost",
             description: "Supercharge your team's potential with new capabilities",
-            client: "AWS",
+            client: "Feegow",
             color: "from-[#FF5C35] to-[#FF8B6C]",
             icon: "⚡"
         }
