@@ -2,28 +2,28 @@ import { Service, Testimonial, NavLink, FooterSection, ProcessStep, CaseStudy } 
 
 export const studies: CaseStudy[] = [
     {
-        title: "AI Consulting",
+        title: "Digital Lab Integration",
         client: "Roche",
-        description: "A digital transformation experience helping healthcare providers build efficient workflows",
+        description: "Seamless integration between CIDM and eLN Signals, plus a custom bulk upload solution for scientific data management",
         image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=900&q=80",
         color: "from-[#FF5C35] to-[#FF8B6C]",
-        stats: ["40% faster workflows", "2.5x ROI"]
+        stats: ["40% faster data upload", "2.5x ROI", "Enhanced UX"]
     },
     {
-        title: "Automation Platform",
+        title: "AI-Powered Knowledge Platform",
         client: "Amyris",
-        description: "Making process automation simple, from zero to working solution in 8 weeks",
+        description: "Revolutionary AI agents and RAG system for process optimization, integrated with Shopify ecommerce and custom React/Python stack",
         image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=900&q=80",
         color: "from-[#4C6FFF] to-[#84A1FF]",
-        stats: ["8 weeks delivery", "60% cost reduction"]
+        stats: ["60% cost reduction", "8 weeks delivery", "AI-driven insights"]
     },
     {
-        title: "AI Integration",
-        client: "Farfetch",
-        description: "Boosting a product-centric approach to support growth into new markets",
-        image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=900&q=80",
+        title: "Healthcare Scheduling Platform",
+        client: "Feegow",
+        description: "Advanced medical appointment scheduling system with AI-powered patient flow optimization",
+        image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=900&q=80",
         color: "from-[#00E6C3] to-[#4DFFD9]",
-        stats: ["3x faster deployment", "95% accuracy"]
+        stats: ["3x faster scheduling", "95% patient satisfaction", "50% less no-shows"]
     }
 ];
 
