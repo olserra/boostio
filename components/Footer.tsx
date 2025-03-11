@@ -36,8 +36,9 @@ const Footer = () => {
     ];
 
     const socialLinks = [
-        { name: 'LinkedIn', href: 'https://linkedin.com/company/boostioai' },
-        { name: 'X', href: 'https://twitter.com/boostio_ai' },
+        { name: 'Blog', href: '/blog', isExternal: false },
+        { name: 'LinkedIn', href: 'https://linkedin.com/company/boostioai', isExternal: true },
+        { name: 'X', href: 'https://twitter.com/boostio_ai', isExternal: true },
     ];
 
     return (
@@ -85,15 +86,25 @@ const Footer = () => {
                         </p>
                         <div className="flex items-center gap-8">
                             {socialLinks.map((link) => (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-gray-500 hover:text-[#FF5C35] transition-colors duration-300"
-                                >
-                                    {link.name}
-                                </a>
+                                link.isExternal ? (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-gray-500 hover:text-[#FF5C35] transition-colors duration-300"
+                                    >
+                                        {link.name}
+                                    </a>
+                                ) : (
+                                    <Link
+                                        key={link.name}
+                                        href={link.href}
+                                        className="text-gray-500 hover:text-[#FF5C35] transition-colors duration-300"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                )
                             ))}
                         </div>
                     </div>

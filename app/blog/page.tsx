@@ -1,120 +1,129 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import { Tag } from "@/components/Tag";
+import { BlogPost } from '@/types/blog';
 
-const blogPosts = [
+const blogPosts: BlogPost[] = [
     {
-        id: 1,
-        title: "The Future of AI in Business",
-        excerpt: "Discover how artificial intelligence is transforming the way businesses operate and compete in the digital age.",
-        date: "2024-03-15",
-        category: "AI Trends",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        id: '1',
+        title: 'AI Consulting: Transforming Businesses with Artificial Intelligence',
+        excerpt: 'Discover how AI consulting services can revolutionize your business operations and drive innovation.',
+        date: 'March 15, 2024',
+        category: 'AI Consulting',
+        image: '/blog/ai-consulting-hero.jpg',
+        tags: ['AI', 'Consulting', 'Innovation'],
+        readingTime: '5 min'
     },
     {
-        id: 2,
-        title: "Getting Started with AI Automation",
-        excerpt: "Learn the basics of implementing AI automation in your business processes and the benefits it can bring.",
-        date: "2024-03-10",
-        category: "Automation",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        id: '2',
+        title: 'The Power of Automation in Modern Business',
+        excerpt: 'Learn how automation can streamline your workflows and boost productivity across your organization.',
+        date: 'March 10, 2024',
+        category: 'Automation',
+        image: '/blog/automation-hero.jpg',
+        tags: ['Automation', 'Productivity', 'Technology'],
+        readingTime: '4 min'
     },
     {
-        id: 3,
-        title: "AI Ethics in the Workplace",
-        excerpt: "Exploring the ethical considerations and best practices for implementing AI solutions in the workplace.",
-        date: "2024-03-05",
-        category: "Ethics",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        id: '3',
+        title: 'Custom Software Development Best Practices',
+        excerpt: 'Explore the essential practices for successful custom software development projects.',
+        date: 'March 5, 2024',
+        category: 'Development',
+        image: '/blog/development-hero.jpg',
+        tags: ['Development', 'Software', 'Best Practices'],
+        readingTime: '6 min'
     },
     {
-        id: 4,
-        title: "The Role of AI in Customer Service",
-        excerpt: "How AI is revolutionizing customer service and improving customer satisfaction across industries.",
-        date: "2024-02-28",
-        category: "Customer Service",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        id: '4',
+        title: 'AI Training: Empowering Your Team with AI Skills',
+        excerpt: 'Invest in your team\'s future with comprehensive AI training programs.',
+        date: 'March 1, 2024',
+        category: 'Training',
+        image: '/blog/training-hero.jpg',
+        tags: ['Training', 'AI', 'Skills Development'],
+        readingTime: '4 min'
     }
 ];
 
-const categories = ["All", "AI Trends", "Automation", "Ethics", "Customer Service"];
+const categories = ['All', 'AI Consulting', 'Automation', 'Development', 'Training'];
 
 export default function BlogPage() {
-    const [selectedCategory, setSelectedCategory] = React.useState("All");
-
-    const filteredPosts = selectedCategory === "All"
-        ? blogPosts
-        : blogPosts.filter(post => post.category === selectedCategory);
-
     return (
-        <div className="min-h-screen bg-black text-white pt-24 pb-16">
-            <div className="container mx-auto px-4 max-w-6xl">
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="text-4xl font-bold mb-8 text-center"
-                >
-                    Blog
-                </motion.h1>
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
-                    className="text-gray-400 text-center mb-12"
-                >
-                    Insights, trends, and updates from the world of AI
-                </motion.p>
-
-                <div className="flex flex-wrap justify-center gap-4 mb-12">
-                    {categories.map((category, index) => (
-                        <motion.button
-                            key={category}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 * index }}
-                            onClick={() => setSelectedCategory(category)}
-                            className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${selectedCategory === category
-                                ? "bg-white text-black"
-                                : "bg-white/10 text-white hover:bg-white/20"
-                                }`}
-                        >
-                            {category}
-                        </motion.button>
-                    ))}
+        <div className="min-h-screen bg-gray-50">
+            {/* Hero Section */}
+            <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
+                <div className="container mx-auto px-4">
+                    <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Blog</h1>
+                    <p className="text-xl md:text-2xl text-blue-100 max-w-2xl">
+                        Insights, tutorials, and updates from our team of experts in AI, automation, and software development.
+                    </p>
                 </div>
+            </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {filteredPosts.map((post, index) => (
-                        <motion.article
-                            key={post.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 * index }}
-                            className="bg-white/5 rounded-lg overflow-hidden hover:bg-white/10 transition-colors"
-                        >
-                            <Link href={`/blog/${post.id}`}>
-                                <div className="aspect-video relative">
-                                    <img
+            {/* Blog Posts Grid */}
+            <div className="container mx-auto px-4 py-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {blogPosts.map((post) => (
+                        <Link href={`/blog/${post.id}`} key={post.id} className="group">
+                            <article className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+                                <div className="relative h-48 w-full">
+                                    <Image
                                         src={post.image}
                                         alt={post.title}
-                                        className="object-cover w-full h-full"
+                                        fill
+                                        className="object-cover group-hover:scale-105 transition-transform duration-300"
                                     />
                                 </div>
                                 <div className="p-6">
-                                    <div className="flex items-center gap-4 mb-4">
-                                        <span className="text-sm text-gray-400">{post.date}</span>
-                                        <span className="text-sm text-white bg-white/10 px-3 py-1 rounded-full">
-                                            {post.category}
-                                        </span>
+                                    <div className="flex gap-2 mb-4 flex-wrap">
+                                        {post.tags.map((tag, index) => (
+                                            <Tag key={index} text={tag} />
+                                        ))}
                                     </div>
-                                    <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-                                    <p className="text-gray-400">{post.excerpt}</p>
+                                    <h2 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                                        {post.title}
+                                    </h2>
+                                    <p className="text-gray-600 mb-4 line-clamp-2">
+                                        {post.excerpt}
+                                    </p>
+                                    <div className="flex items-center text-sm text-gray-500">
+                                        <time>{post.date}</time>
+                                        <span className="mx-2">•</span>
+                                        <span>{post.readingTime} read</span>
+                                    </div>
                                 </div>
-                            </Link>
-                        </motion.article>
+                            </article>
+                        </Link>
                     ))}
+                </div>
+            </div>
+
+            {/* Newsletter Section */}
+            <div className="bg-gradient-to-r from-indigo-600 to-blue-700 py-16">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-3xl font-bold text-white mb-6">
+                        Subscribe to Our Newsletter
+                    </h2>
+                    <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
+                        Stay updated with our latest insights and news about AI, automation, and software development.
+                    </p>
+                    <form className="max-w-md mx-auto flex gap-4">
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            className="flex-1 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        />
+                        <button
+                            type="submit"
+                            className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors duration-300"
+                        >
+                            Subscribe
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
