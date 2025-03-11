@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { studies } from '@/constants';
+import { studies } from '@/constants/index';
 
 const CaseStudyDetail = ({ study, index }: { study: any; index: number }) => {
     const isEven = index % 2 === 0;
