@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import CaseStudyCard from './CaseStudyCard';
-import { useCaseStudies } from '@/contexts/CaseStudiesContext';
+import { useCaseStudies } from '../../contexts/CaseStudiesContext';
 
 const CaseStudies = () => {
     const { studies } = useCaseStudies();
