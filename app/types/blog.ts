@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface BlogPost {
     id: string;
     title: string;
@@ -7,5 +9,5 @@ export interface BlogPost {
     image: string;
     tags: string[];
     readingTime: string;
-    content?: React.ReactNode;
+    content?: ReactNode;
 } 

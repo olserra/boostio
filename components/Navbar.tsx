@@ -51,6 +51,10 @@ const Navbar = () => {
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
                 setIsOpen(false);
+            } else {
+                // If element is not found, we're probably on a different page
+                // Navigate to homepage with the hash
+                window.location.href = '/' + href;
             }
         }
     };

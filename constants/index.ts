@@ -1,4 +1,6 @@
 import { Service, Testimonial, NavLink, FooterSection, ProcessStep, CaseStudy } from '@/types';
+export * from './theme';
+export * from './author';
 
 export const studies: CaseStudy[] = [
     {

@@ -4,18 +4,27 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Tag } from "@/components/Tag";
-import { BlogPost } from '@/types/blog';
+import { BlogPost } from '@/types/types';
 
 const blogPosts: BlogPost[] = [
     {
         id: '1',
         title: 'AI Consulting: Transforming Businesses with Artificial Intelligence',
         excerpt: 'Discover how AI consulting services can revolutionize your business operations and drive innovation.',
-        date: 'March 15, 2024',
+        date: 'March 21, 2024',
         category: 'AI Consulting',
         image: '/blog/ai-consulting-hero.jpg',
         tags: ['AI', 'Consulting', 'Innovation'],
-        readingTime: '5 min'
+        readingTime: '5 min',
+        content: {
+            introduction: 'AI consulting services are revolutionizing how businesses operate in the modern world.',
+            sections: [
+                {
+                    title: 'Understanding AI Consulting',
+                    content: 'AI consulting helps businesses leverage artificial intelligence technologies effectively.'
+                }
+            ]
+        }
     },
     {
         id: '2',
@@ -25,7 +34,16 @@ const blogPosts: BlogPost[] = [
         category: 'Automation',
         image: '/blog/automation-hero.jpg',
         tags: ['Automation', 'Productivity', 'Technology'],
-        readingTime: '4 min'
+        readingTime: '4 min',
+        content: {
+            introduction: 'Automation is transforming the way businesses operate and manage their workflows.',
+            sections: [
+                {
+                    title: 'Benefits of Automation',
+                    content: 'Discover how automation can improve efficiency and reduce operational costs.'
+                }
+            ]
+        }
     },
     {
         id: '3',
@@ -35,7 +53,16 @@ const blogPosts: BlogPost[] = [
         category: 'Development',
         image: '/blog/development-hero.jpg',
         tags: ['Development', 'Software', 'Best Practices'],
-        readingTime: '6 min'
+        readingTime: '6 min',
+        content: {
+            introduction: 'Following best practices in custom software development is crucial for project success.',
+            sections: [
+                {
+                    title: 'Key Development Practices',
+                    content: 'Learn about the essential practices that lead to successful software projects.'
+                }
+            ]
+        }
     },
     {
         id: '4',
@@ -45,7 +72,16 @@ const blogPosts: BlogPost[] = [
         category: 'Training',
         image: '/blog/training-hero.jpg',
         tags: ['Training', 'AI', 'Skills Development'],
-        readingTime: '4 min'
+        readingTime: '4 min',
+        content: {
+            introduction: 'Empower your team with the skills they need to leverage AI effectively.',
+            sections: [
+                {
+                    title: 'AI Training Benefits',
+                    content: 'Discover how AI training can transform your team\'s capabilities.'
+                }
+            ]
+        }
     }
 ];
 
@@ -55,7 +91,7 @@ export default function BlogPage() {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
+            <div className="bg-gradient-to-r from-blue-600 to-indigo-700 py-20">
                 <div className="container mx-auto px-4">
                     <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Blog</h1>
                     <p className="text-xl md:text-2xl text-blue-100 max-w-2xl">
@@ -105,17 +141,17 @@ export default function BlogPage() {
             {/* Newsletter Section */}
             <div className="bg-gradient-to-r from-indigo-600 to-blue-700 py-16">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl font-bold text-white mb-6">
+                    <h2 className="text-3xl font-bold mb-6">
                         Subscribe to Our Newsletter
                     </h2>
                     <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
                         Stay updated with our latest insights and news about AI, automation, and software development.
                     </p>
-                    <form className="max-w-md mx-auto flex gap-4">
+                    <form className="max-w-md flex justify-center gap-4">
                         <input
                             type="email"
                             placeholder="Enter your email"
-                            className="flex-1 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            className="px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                         />
                         <button
                             type="submit"

@@ -2,6 +2,10 @@ import { Space_Grotesk, Vampiro_One } from "next/font/google";
 import "./globals.css";
 import { Metadata, Viewport } from "next";
 import { Navbar, Footer } from "@/components";
+import { CaseStudiesProvider } from "@/contexts/CaseStudiesContext";
+import { ThemeProvider } from '@/contexts/ThemeContext';
+import { NavigationProvider } from '@/contexts/NavigationContext';
+import { ServicesProvider } from '@/contexts/ServicesContext';
 
 const spaceGrotesk = Space_Grotesk({
     subsets: ["latin"],
@@ -55,11 +59,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
     return (
         <html lang="en" className={spaceGrotesk.className}>
             <body className="bg-white text-[#111111] selection:bg-[#FF5C35] selection:text-white">
-                <Navbar />
-                <main className="pt-20">
-                    {children}
-                </main>
-                <Footer />
+                <ThemeProvider>
+                    <NavigationProvider>
+                        <ServicesProvider>
+                            <CaseStudiesProvider>
+                                <Navbar />
+                                <main className="pt-20">
+                                    {children}
+                                </main>
+                                <Footer />
+                            </CaseStudiesProvider>
+                        </ServicesProvider>
+                    </NavigationProvider>
+                </ThemeProvider>
             </body>
         </html>
     );
