@@ -2,31 +2,15 @@
 
 import React, { createContext, useContext, useMemo } from 'react';
 import { CaseStudy, CaseStudiesContextType } from '@/types';
+import { studies } from '@/constants/index';
 
 const CaseStudiesContext = createContext<CaseStudiesContextType | undefined>(undefined);
 
 export const CaseStudiesProvider = ({ children }: { children: React.ReactNode }) => {
-    const studies = useMemo<CaseStudy[]>(() => [
-        {
-            title: "Digital Transformation",
-            client: "Tech Corp",
-            description: "Complete digital transformation project",
-            image: "/images/case-studies/tech-corp.jpg",
-            color: "#FF5C35",
-            stats: ["45% increase in efficiency", "2x revenue growth", "98% customer satisfaction"]
-        },
-        {
-            title: "AI Implementation",
-            client: "Innovation Labs",
-            description: "Enterprise-wide AI solution deployment",
-            image: "/images/case-studies/innovation-labs.jpg",
-            color: "#00E6C3",
-            stats: ["30% cost reduction", "3x productivity boost", "95% accuracy rate"]
-        }
-    ], []);
+    const studiesData = useMemo(() => studies, []);
 
     return (
-        <CaseStudiesContext.Provider value={{ studies }}>
+        <CaseStudiesContext.Provider value={{ studies: studiesData }}>
             {children}
         </CaseStudiesContext.Provider>
     );

@@ -1,13 +1,19 @@
 import React from 'react';
-import BlogPost from '@/components/BlogPost';
+import BlogPostComponent from '@/components/BlogPost';
 import { BLOG_POSTS } from '@/constants/blog';
 import { notFound } from 'next/navigation';
-import type { BlogContent } from '@/types';
+import type { BlogContent, BlogPost } from '@/types';
 
 interface BlogPostPageProps {
     params: {
         id: string;
     };
+}
+
+export async function generateStaticParams() {
+    return BLOG_POSTS.map((post: BlogPost) => ({
+        id: post.id,
+    }));
 }
 
 const renderBlogContent = (content: BlogContent) => {
@@ -45,14 +51,14 @@ const renderBlogContent = (content: BlogContent) => {
 };
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
-    const post = BLOG_POSTS.find(post => post.id === params.id);
+    const post = BLOG_POSTS.find((post: BlogPost) => post.id === params.id);
 
     if (!post) {
         notFound();
     }
 
     return (
-        <BlogPost
+        <BlogPostComponent
             title={post.title}
             date={post.date}
             category={post.category}

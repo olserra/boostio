@@ -10,9 +10,9 @@ export const THEME = {
 };
 
 export const AUTHOR = {
-    name: 'Oliver Serra',
+    name: 'Otavio Serra',
     role: 'CEO & Founder',
-    image: '/images/author.jpg',
+    image: '/otavio-serra.jpeg',
     social: {
         twitter: 'https://twitter.com/oliverserra',
         linkedin: 'https://linkedin.com/in/oliverserra',
