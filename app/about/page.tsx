@@ -16,13 +16,14 @@ const AboutPage = () => {
                     className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
                 >
                     {/* Image Section */}
-                    <div className="relative h-[600px] rounded-2xl overflow-hidden">
+                    <div className="overflow-hidden">
                         <Image
                             src="/otavio-serra.jpeg"
                             alt="Otavio Serra"
-                            fill
+                            width={500}
+                            height={500}
                             style={{ objectFit: "cover" }}
-                            className="hover:scale-105 transition-transform duration-500"
+                            className="hover:scale-105 rounded-2xl transition-transform duration-500"
                             priority
                         />
                     </div>

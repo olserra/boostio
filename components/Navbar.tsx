@@ -21,7 +21,7 @@ const Navbar = () => {
     const menuItems = [
         { name: 'What we do', href: '#services' },
         { name: 'Work', href: '#case-studies' },
-        { name: 'Our story', href: '#about' },
+        { name: 'Our story', href: '/about' },
         { name: 'Insights', href: '#process' },
         { name: "Let's chat", href: 'https://wa.me/351914127195' },
     ];
