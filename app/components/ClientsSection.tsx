@@ -67,9 +67,6 @@ const ClientsSection = () => {
                         </div>
                     ))}
                 </motion.div>
-                {/* Add gradient masks for smooth fade effect */}
-                <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-white to-transparent pointer-events-none" />
-                <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-white to-transparent pointer-events-none" />
             </div>
         </div>
     );
