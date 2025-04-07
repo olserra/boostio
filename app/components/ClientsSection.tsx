@@ -11,7 +11,7 @@ const ClientsSection = () => {
         { src: "/farfetch.png", alt: "Farfetch" },
         { src: "/feegow.png", alt: "Feegow" },
         { src: "/openai.png", alt: "OpenAI" },
-        { src: "/solea.png", alt: "Solea" },
+        { src: "/Solea.png", alt: "Solea" },
         { src: "/doctoralia.svg", alt: "Doctoralia" }
     ];
 
