@@ -20,7 +20,7 @@ export const AUTHOR = {
 };
 
 export const CONTACT = {
-    whatsapp: 'https://wa.me/yourphonenumber',
+    whatsapp: 'https://wa.me/351914127195',
     email: 'hello@boostio.ai',
 };
 

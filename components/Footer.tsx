@@ -9,10 +9,10 @@ const Footer = () => {
         {
             title: 'What we do',
             links: [
-                { name: 'AI Consulting', href: '#work' },
-                { name: 'Automation', href: '#work' },
-                { name: 'Development', href: '#work' },
-                { name: 'Training', href: '#work' },
+                { name: 'Training & Workshops', href: '#work' },
+                { name: 'Engineering', href: '#work' },
+                { name: 'UI/UX Design', href: '#work' },
+                { name: 'Social Media', href: '#work' },
             ],
         },
         {

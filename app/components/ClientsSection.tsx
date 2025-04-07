@@ -10,7 +10,9 @@ const ClientsSection = () => {
         { src: "/amyris.png", alt: "Amyris" },
         { src: "/farfetch.png", alt: "Farfetch" },
         { src: "/feegow.png", alt: "Feegow" },
-        { src: "/openai.png", alt: "OpenAI" }
+        { src: "/openai.png", alt: "OpenAI" },
+        { src: "/solea.png", alt: "Solea" },
+        { src: "/doctoralia.svg", alt: "Doctoralia" }
     ];
 
     // Quadruple the array for smoother infinite loop
@@ -54,13 +56,24 @@ const ClientsSection = () => {
                     {duplicatedClients.map((client, index) => (
                         <div
                             key={`${client.alt}-${index}`}
-                            className="flex-shrink-0 hover:scale-110 transition-transform duration-300 flex items-center justify-center h-[100px]"
+                            className={`flex-shrink-0 hover:scale-110 transition-transform duration-300 flex items-center justify-center ${
+                                client.alt === "Doctoralia" ? "h-[150px]" : 
+                                client.alt === "Solea" ? "h-[70px]" : 
+                                client.alt === "Farfetch" ? "h-[120px]" : 
+                                "h-[100px]"
+                            }`}
                         >
                             <Image
                                 className="grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-300 object-contain"
                                 src={client.src}
-                                width={100}
-                                height={100}
+                                width={client.alt === "Doctoralia" ? 150 : 
+                                      client.alt === "Solea" ? 70 : 
+                                      client.alt === "Farfetch" ? 120 : 
+                                      100}
+                                height={client.alt === "Doctoralia" ? 150 : 
+                                       client.alt === "Solea" ? 70 : 
+                                       client.alt === "Farfetch" ? 120 : 
+                                       100}
                                 alt={client.alt}
                                 quality={90}
                             />

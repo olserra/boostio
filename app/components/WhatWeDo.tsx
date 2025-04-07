@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { PiMagnifyingGlass, PiRocketLaunch, PiSparkle, PiLightning } from 'react-icons/pi';
+import { PiGraduationCap, PiCode, PiPalette, PiShareNetwork } from 'react-icons/pi';
 import { WhatWeDoItem } from '@/types';
 
 const WhatWeDoCard = ({ item, index }: { item: WhatWeDoItem; index: number }) => (
@@ -23,28 +23,28 @@ const WhatWeDoCard = ({ item, index }: { item: WhatWeDoItem; index: number }) =>
 const WhatWeDo = () => {
     const items: WhatWeDoItem[] = [
         {
-            title: "Discover",
-            description: "Understand your business needs and goals",
+            title: "Training & Workshops",
+            description: "From discovery sessions to hands-on hackathons, we help your team understand and leverage AI through customized training programs and collaborative workshops",
             color: "from-[#FF5C35] to-[#FF8B6C]",
-            icon: <PiMagnifyingGlass className="w-8 h-8" />
+            icon: <PiGraduationCap className="w-8 h-8" />
         },
         {
-            title: "Pilot",
-            description: "Make it real and try it out in the real world",
+            title: "Engineering",
+            description: "We build, deploy, and maintain AI solutions including custom software, automation systems, and intelligent agents that drive business value",
             color: "from-[#4C6FFF] to-[#84A1FF]",
-            icon: <PiRocketLaunch className="w-8 h-8" />
+            icon: <PiCode className="w-8 h-8" />
         },
         {
-            title: "Launch",
-            description: "Pick the highest value features and iterate towards success",
+            title: "UI/UX Design",
+            description: "We create intuitive and engaging interfaces that make complex AI solutions accessible and delightful to use for your team and customers",
             color: "from-[#00E6C3] to-[#4DFFD9]",
-            icon: <PiSparkle className="w-8 h-8" />
+            icon: <PiPalette className="w-8 h-8" />
         },
         {
-            title: "Boost",
-            description: "Supercharge your team's potential with new capabilities",
+            title: "Social Media",
+            description: "Leverage AI to automate content creation, analyze performance, and make data-driven decisions to enhance your social media presence",
             color: "from-[#FF5C35] to-[#FF8B6C]",
-            icon: <PiLightning className="w-8 h-8" />
+            icon: <PiShareNetwork className="w-8 h-8" />
         }
     ];
 
