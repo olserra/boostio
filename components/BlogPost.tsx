@@ -5,7 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Tag } from './Tag';
 import type { BlogPostProps } from '../types';
-import { AUTHOR, CONTACT, THEME } from '../constants';
+import { CONTACT, THEME } from '../constants';
+import { AUTHORS } from '../constants/authors';
 
 // Progress bar component
 const ReadingProgress = () => {
@@ -75,7 +76,10 @@ const BlogPost: React.FC<BlogPostProps> = ({
     image,
     tags,
     readingTime = '5 min read',
+    authorId
 }) => {
+    const author = AUTHORS.find(a => a.id === authorId);
+
     return (
         <article className="min-h-screen bg-white">
             <ReadingProgress />
@@ -101,38 +105,29 @@ const BlogPost: React.FC<BlogPostProps> = ({
                     <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">{title}</h1>
 
                     {/* Author Section */}
-                    <div className="flex items-center gap-4 py-6">
-                        <Image
-                            src={AUTHOR.image}
-                            alt="Author"
-                            width={48}
-                            height={48}
-                            className="rounded-full"
-                        />
-                        <div>
-                            <div className="flex items-center gap-2">
-                                <span className="font-medium text-gray-900">{AUTHOR.name}</span>
-                                <span className="text-gray-400">·</span>
-                                <time className="text-gray-600">{date}</time>
-                                <span className="text-gray-400">·</span>
-                                <span className="text-gray-600">{readingTime}</span>
+                    {author && (
+                        <div className="flex items-center gap-4 py-6">
+                            <Image
+                                src={author.image}
+                                alt={author.name}
+                                width={48}
+                                height={48}
+                                className="rounded-full"
+                            />
+                            <div>
+                                <div className="flex items-center gap-2">
+                                    <span className="font-medium text-gray-900">{author.name}</span>
+                                    <span className="text-gray-400">·</span>
+                                    <time className="text-gray-600">{date}</time>
+                                    <span className="text-gray-400">·</span>
+                                    <span className="text-gray-600">{readingTime}</span>
+                                </div>
+                                <p className="text-gray-600 text-sm">{author.role}</p>
                             </div>
-                            <p className="text-gray-600 text-sm">{AUTHOR.role}</p>
                         </div>
-                    </div>
+                    )}
                 </div>
             </header>
-
-            {/* Featured Image */}
-            <div className="relative h-[60vh] w-full my-12">
-                <Image
-                    src={image.url}
-                    alt={image.alt}
-                    fill
-                    className="object-cover"
-                    priority
-                />
-            </div>
 
             {/* Content Section */}
             <div className="container max-w-4xl mx-auto px-4 md:px-0">
@@ -154,29 +149,31 @@ const BlogPost: React.FC<BlogPostProps> = ({
                 </div>
 
                 {/* Author Bio Section */}
-                <div className="my-12 p-8 bg-gray-50 rounded-xl mt-12">
-                    <div className="flex items-center gap-4">
-                        <Image
-                            src={AUTHOR.image}
-                            alt="Author"
-                            width={80}
-                            height={80}
-                            className="rounded-full"
-                        />
-                        <div>
-                            <h4 className="text-xl font-semibold mb-2">Written by {AUTHOR.name}</h4>
-                            <p className="text-gray-600 mb-4">{AUTHOR.role}. Passionate about AI, innovation, and helping businesses grow through technology.</p>
-                            <div className="flex gap-4">
-                                <a href={AUTHOR.social.twitter} className="text-[#FF5C35] hover:text-[#FF5C35]/80 transition-colors duration-300">
-                                    Twitter
-                                </a>
-                                <a href={AUTHOR.social.linkedin} className="text-[#FF5C35] hover:text-[#FF5C35]/80 transition-colors duration-300">
-                                    LinkedIn
-                                </a>
+                {author && (
+                    <div className="my-12 p-8 bg-gray-50 rounded-xl mt-12">
+                        <div className="flex items-center gap-4">
+                            <Image
+                                src={author.image}
+                                alt={author.name}
+                                width={80}
+                                height={80}
+                                className="rounded-full"
+                            />
+                            <div>
+                                <h4 className="text-xl font-semibold mb-2">Written by {author.name}</h4>
+                                <p className="text-gray-600 mb-4">{author.role}. Passionate about AI, innovation, and helping businesses grow through technology.</p>
+                                <div className="flex gap-4">
+                                    <a href={author.social.twitter} className="text-[#FF5C35] hover:text-[#FF5C35]/80 transition-colors duration-300">
+                                        Twitter
+                                    </a>
+                                    <a href={author.social.linkedin} className="text-[#FF5C35] hover:text-[#FF5C35]/80 transition-colors duration-300">
+                                        LinkedIn
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                )}
 
                 {/* CTA Section */}
                 <div className="my-20 bg-gradient-to-br from-gray-900 to-gray-800 p-12 rounded-2xl text-white">

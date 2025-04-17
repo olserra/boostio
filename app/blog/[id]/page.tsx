@@ -69,6 +69,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             tags={post.tags}
             readingTime={post.readingTime}
             content={renderBlogContent(post.content)}
+            authorId={post.authorId}
         />
     );
 } 

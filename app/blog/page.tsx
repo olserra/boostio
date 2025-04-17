@@ -99,7 +99,7 @@ export default function BlogPage() {
                     className="object-cover"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-900/50" />
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-900/40 to-gray-900/20" />
                 <div className="container mx-auto px-4 relative h-full flex flex-col justify-center">
                     <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#FF5C35]">Our Blog</h1>
                     <p className="text-xl md:text-2xl text-[#FF5C35]/90 max-w-2xl">

@@ -113,6 +113,7 @@ export interface BlogPost {
     date: string;
     category: string;
     image: string;
+    authorId: string;
     tags: string[];
     readingTime: string;
     content: BlogContent;
@@ -147,6 +148,7 @@ export interface BlogPostProps {
     };
     tags: string[];
     readingTime?: string;
+    authorId: string;
 }
 
 export interface TagProps {

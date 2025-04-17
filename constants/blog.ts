@@ -7,7 +7,8 @@ export const BLOG_POSTS: BlogPost[] = [
         excerpt: 'Discover how AI consulting services can revolutionize your business operations and drive innovation.',
         date: 'March 21, 2024',
         category: 'AI Consulting',
-        image: '/blog/ai-consulting-hero.jpg',
+        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+        authorId: '1',
         tags: ['AI', 'Consulting', 'Innovation'],
         readingTime: '5 min',
         content: {
@@ -77,7 +78,8 @@ export const BLOG_POSTS: BlogPost[] = [
         excerpt: 'Learn how automation can streamline your workflows and boost productivity across your organization.',
         date: 'March 18, 2024',
         category: 'Automation',
-        image: '/blog/automation-hero.jpg',
+        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+        authorId: '2',
         tags: ['Automation', 'Productivity', 'Technology'],
         readingTime: '4 min',
         content: {
