@@ -22,6 +22,7 @@ const Navbar = () => {
         { name: 'Work', href: '#work' },
         { name: 'Our story', href: '/about' },
         { name: 'Insights', href: '#insights' },
+        { name: 'Blog', href: '/blog' },
         { name: "Let's chat", href: 'https://wa.me/351914127195' },
     ];
 
