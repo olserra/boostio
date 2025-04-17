@@ -14,9 +14,9 @@ const WhatWeDoCard = ({ item, index }: { item: WhatWeDoItem; index: number }) =>
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
         >
-            <div className={`h-4 w-20 mb-4 bg-gradient-to-r ${item.color} group-hover:w-32 transition-all duration-300`} />
+            <div className={`h-2 w-20 mb-4 bg-gradient-to-r ${item.color} group-hover:w-32 transition-all duration-300`} />
             <span className="text-4xl mb-3 block">{item.icon}</span>
-            <h3 className="text-lg font-bold mb-3">{item.title}</h3>
+            <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
             <p className="text-body flex-grow line-clamp-4">{item.description}</p>
         </motion.div>
     </Link>
