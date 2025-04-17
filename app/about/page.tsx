@@ -41,7 +41,7 @@ const AboutPage = () => {
 
                         <div className="space-y-6 text-gray-600">
                             <p>
-                                Solea was born in the vibrant heart of Lisbon, a city where innovation meets tradition, and where the sun's golden rays inspire creativity. Our journey began in this dynamic tech hub, where cutting-edge technology and sustainable practices converge.
+                                Boostio was born in the vibrant heart of Lisbon, a city where innovation meets tradition, and where the sun's golden rays inspire creativity. Our journey began in this dynamic tech hub, where cutting-edge technology and sustainable practices converge.
                             </p>
                             <p>
                                 From our roots in this historic yet forward-thinking city, we've grown into a company that embodies the perfect blend of tradition and innovation. Our commitment to excellence and sustainable development drives everything we do, as we continue to build bridges between technology and human potential.
