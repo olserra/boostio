@@ -7,17 +7,19 @@ import { PiGraduationCap, PiCode, PiPalette, PiShareNetwork } from 'react-icons/
 import { WhatWeDoItem } from '@/types';
 
 const WhatWeDoCard = ({ item, index }: { item: WhatWeDoItem; index: number }) => (
-    <motion.div
-        className="group p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-500"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: index * 0.1 }}
-    >
-        <div className={`h-2 w-20 mb-6 bg-gradient-to-r ${item.color} group-hover:w-32 transition-all duration-300`} />
-        <span className="text-4xl mb-4 block">{item.icon}</span>
-        <h3 className="heading-3 mb-4">{item.title}</h3>
-        <p className="text-body mb-4">{item.description}</p>
-    </motion.div>
+    <Link href={item.href}>
+        <motion.div
+            className="group p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 cursor-pointer h-[300px] flex flex-col"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+        >
+            <div className={`h-2 w-20 mb-6 bg-gradient-to-r ${item.color} group-hover:w-32 transition-all duration-300`} />
+            <span className="text-4xl mb-4 block">{item.icon}</span>
+            <h3 className="heading-3 mb-4">{item.title}</h3>
+            <p className="text-body mb-4 flex-grow">{item.description}</p>
+        </motion.div>
+    </Link>
 );
 
 const WhatWeDo = () => {
@@ -26,25 +28,29 @@ const WhatWeDo = () => {
             title: "Training & Workshops",
             description: "From discovery sessions to hands-on hackathons, we help your team understand and leverage AI through customized training programs and collaborative workshops",
             color: "from-[#FF5C35] to-[#FF8B6C]",
-            icon: <PiGraduationCap className="w-8 h-8" />
+            icon: <PiGraduationCap className="w-8 h-8" />,
+            href: "/verticals/training"
         },
         {
             title: "Engineering",
             description: "We build, deploy, and maintain AI solutions including custom software, automation systems, and intelligent agents that drive business value",
             color: "from-[#4C6FFF] to-[#84A1FF]",
-            icon: <PiCode className="w-8 h-8" />
+            icon: <PiCode className="w-8 h-8" />,
+            href: "/verticals/engineering"
         },
         {
             title: "UI/UX Design",
             description: "We create intuitive and engaging interfaces that make complex AI solutions accessible and delightful to use for your team and customers",
             color: "from-[#00E6C3] to-[#4DFFD9]",
-            icon: <PiPalette className="w-8 h-8" />
+            icon: <PiPalette className="w-8 h-8" />,
+            href: "/verticals/projects"
         },
         {
             title: "Social Media",
             description: "Leverage AI to automate content creation, analyze performance, and make data-driven decisions to enhance your social media presence",
             color: "from-[#FF5C35] to-[#FF8B6C]",
-            icon: <PiShareNetwork className="w-8 h-8" />
+            icon: <PiShareNetwork className="w-8 h-8" />,
+            href: "/verticals/social-media"
         }
     ];
 

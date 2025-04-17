@@ -16,6 +16,7 @@ export interface WhatWeDoItem {
     description: string;
     color: string;
     icon: React.ReactNode;
+    href: string;
 }
 
 
