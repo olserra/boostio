@@ -38,14 +38,14 @@ export function VerticalsNav() {
             key={vertical.href}
             href={vertical.href}
             className={cn(
-              "group rounded-lg border p-6 transition-colors hover:border-primary",
-              pathname === vertical.href ? "border-primary bg-primary text-white" : "border-muted"
+              "group rounded-lg border p-6 transition-colors hover:border-primary hover:bg-primary/10",
+              pathname === vertical.href ? "border-primary bg-primary text-primary-foreground" : "border-muted hover:text-primary"
             )}
           >
             <h3 className="text-lg font-semibold mb-2">{vertical.name}</h3>
             <p className={cn(
               "text-sm",
-              pathname === vertical.href ? "text-white/90" : "text-muted-foreground"
+              pathname === vertical.href ? "text-primary-foreground/90" : "text-muted-foreground group-hover:text-primary/90"
             )}>{vertical.description}</p>
           </Link>
         ))}
